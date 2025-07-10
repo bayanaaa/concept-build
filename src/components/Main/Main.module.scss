@@ -1,0 +1,246 @@
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+.parent {
+  header {
+    position: absolute;
+    left: 45%;
+    top: 35px;
+    z-index: 8;
+    cursor: pointer;
+  }
+  .content {
+    margin-top: 70px;
+    background: url(../../assets/background.svg);
+    background-size: cover;
+    z-index: 1;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    object-fit: cover;
+    padding: 36px;
+    height: 100vh;
+    width: 100%;
+    max-height: 750px;
+    position: relative;
+    .upper_part {
+      position: unset;
+      display: flex;
+      z-index: 476 !important;
+      justify-content: space-between;
+      .text {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        font-family: "SF Pro Display", sans-serif;
+        text-decoration: none;
+        display: flex;
+      }
+      .icon {
+        margin-right: 10px;
+      }
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10%;
+      h1 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 600;
+        font-family: "SF Pro Display", sans-serif;
+        color: #fff;
+        line-height: 56px;
+      }
+      nav {
+        display: flex;
+        margin-top: 100px;
+        background: #fff;
+        width: fit-content;
+        padding: 4px;
+        border-radius: 10px;
+
+        .nav_item {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          min-width: 100px;
+          align-items: center;
+          padding: 6px 16px;
+          background: transparent;
+          border-radius: 10px;
+          color: #9ea9b7;
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 20px;
+          font-family: "SF Pro Display", sans-serif;
+          text-decoration: none;
+          transition: all 0.3s ease;
+          .nav_icon {
+            font-size: 20px;
+            margin-bottom: 0;
+            color: #9ea9b7;
+          }
+          .soon {
+            position: absolute;
+            top: -15px;
+            right: -30px;
+            z-index: 3;
+            background: #f07f1a;
+            border-radius: 22px;
+            font-size: 15px;
+            line-height: 20px;
+            color: #fff;
+            padding: 4px 8px;
+            font-family: "SF Pro Display", sans-serif;
+            font-weight: 500;
+          }
+          &:hover {
+            color: #fff;
+            background: #0391d4;
+            .nav_icon {
+              color: #fff;
+            }
+          }
+        }
+      }
+      form {
+        margin-top: 23px;
+        gap: 2px;
+        z-index: 4;
+        .dest_section {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+          position: relative;
+          .city_menu {
+            position: absolute;
+            z-index: 1111;
+            animation: menu 0.3s ease forwards;
+            top: 105%;
+            left: 0;
+            right: 0;
+            border-radius: 10px;
+            background: #fff;
+            padding: 20px;
+            .block {
+              margin-bottom: 10px;
+              display: flex;
+              gap: 10px;
+              background: transparent;
+              padding: 10px;
+              cursor: pointer;
+              border-radius: 10px;
+              transition: 0.2s ease;
+              .plane_icon {
+                color: #0391d466;
+                font-size: 22px;
+                width: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 44px;
+                border-radius: 8px;
+                background: #0391d41a;
+              }
+              .info {
+                display: flex;
+                flex-direction: column;
+                p {
+                  font-size: 16px;
+                  font-weight: 600;
+                  color: #5c5c5c;
+                  margin: 0;
+                  span {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #9e9e9e;
+                    line-height: 19px;
+                    margin-left: 8px;
+                  }
+                }
+                .city {
+                  color: #9e9e9e;
+                  font-size: 16px;
+                  font-weight: 500;
+                }
+              }
+            }
+            .block:hover {
+              background: #a3d9f733;
+            }
+          }
+        }
+        .input_group {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          align-items: center;
+          padding: 20px 16px;
+          background: #fff;
+          height: 60px;
+
+          input {
+            font-weight: 400;
+            font-size: 16px;
+            background: none;
+            outline: none;
+            border: none;
+            line-height: 18px;
+            font-family: "SF Pro Display", sans-serif;
+            color: #000;
+          }
+          .code,
+          .type {
+            font-size: 12px;
+            color: #9ea9b7;
+            font-weight: 500;
+            font-family: "SF Pro Display", sans-serif;
+          }
+          .type {
+            font-size: 14px;
+          }
+          .arrow {
+            display: flex;
+            font-size: 15px;
+            margin-top: 10px;
+            color: #9ea9b7;
+          }
+        }
+        .firstInput {
+          border-top-left-radius: 16px;
+          border-bottom-left-radius: 16px;
+        }
+        .lastInput {
+          border-top-right-radius: 16px;
+          border-bottom-right-radius: 16px;
+        }
+      }
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 100%;
+      height: 100%;
+      background-image: url("../../assets/map.svg");
+      object-fit: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+}
+
+@keyframes menu {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

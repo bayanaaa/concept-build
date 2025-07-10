@@ -1,0 +1,27 @@
+.content {
+  margin-top: 80px;
+  main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    div {
+      height: 278px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 20px;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: cover !important;
+      position: relative;
+      p {
+        position: absolute;
+        bottom: 0;
+        font-size: 20px;
+        font-weight: 600;
+        background: #fff;
+        border-radius: 16px;
+        padding: 6px;
+      }
+    }
+  }
+}
