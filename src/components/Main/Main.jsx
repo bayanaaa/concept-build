@@ -123,6 +123,7 @@ function Main() {
                   <FaAngleDown />
                 </p>
               </div>
+              <button type="submit">Search flights</button>
             </form>
           </main>
         </div>
