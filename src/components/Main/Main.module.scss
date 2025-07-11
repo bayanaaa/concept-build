@@ -216,6 +216,19 @@
           border-top-right-radius: 16px;
           border-bottom-right-radius: 16px;
         }
+        button {
+          border: none;
+          background: #0391d4;
+          color: #fff;
+          font-family: "SF Pro Display" sans-serif;
+          width: 200px;
+          height: auto;
+          border-radius: 16px;
+          margin-left: 8px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 19px;
+        }
       }
     }
     &::before {
