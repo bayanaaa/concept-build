@@ -1,0 +1,20 @@
+.content {
+  margin: 10px 0 0 80px;
+  main {
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 30px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .card {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: "Gilroy-Medium", sans-serif;
+    }
+  }
+}
