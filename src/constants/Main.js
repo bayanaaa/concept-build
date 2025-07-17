@@ -51,11 +51,6 @@ export const mainArr = [
       link: "/blog",
     },
     {
-      icon: FaUser,
-      title: "Клиентам",
-      link: "/for-clients",
-    },
-    {
       icon: IoIosCall,
       title: "Контакты",
       link: "/contacts",

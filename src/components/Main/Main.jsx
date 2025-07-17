@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import scss from "./Main.module.scss";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -6,11 +6,24 @@ import { FaUser } from "react-icons/fa";
 import { data, mainArr } from "../../constants/Main";
 import { IoMdAirplane } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa6";
+import Authorization from "../Authorization/Authorization";
 
 function Main() {
   const [cityMenu, setCityMenu] = useState(null);
   const [from, setFrom] = useState({ value: "", code: "" });
   const [to, setTo] = useState({ value: "", code: "" });
+  const [authOpen, setAuthOpen] = useState(false);
+
+  useEffect(() => {
+    if (authOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [authOpen]);
 
   const navigation = mainArr[0].map(
     ({ icon: Icon, title, link, soon }, index) => (
@@ -66,13 +79,14 @@ function Main() {
             <a href="#" className={scss.text}>
               Стать партнёром
             </a>
-            <Link to="/login" className={scss.text}>
+            <div className={scss.text} onClick={() => setAuthOpen(true)}>
               <p className={scss.icon}>
                 <FaUser />
               </p>
               Войти
-            </Link>
+            </div>
           </div>
+          {authOpen && <Authorization setAuthOpen={setAuthOpen} />}
           <main>
             <h1>
               Your gateway to the world flights tours <br /> memories

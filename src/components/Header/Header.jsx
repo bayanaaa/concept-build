@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import scss from "./Header.module.scss";
 import Hamburger from "hamburger-react";
 import logo from "../../assets/logo2.svg";
@@ -6,10 +6,22 @@ import { FaUser } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { mainArr } from "../../constants/Main";
 import ru from "../../assets/ru.svg";
+import Authorization from "../Authorization/Authorization";
 
 function Header() {
   const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [authOpen, setAuthOpen] = useState(false);
+
+   useEffect(()=>{
+    if(authOpen){
+      document.body.style.height = "100vh"
+      document.body.style.overflow = "hidden"
+    }else{
+      document.body.style.height = "auto"
+      document.body.style.overflow = "auto"
+    }
+  },[authOpen])
 
   const navigation = mainArr.map((el, index) => (
     <div key={index} className={scss.nav_block}>
@@ -49,6 +61,7 @@ function Header() {
       <p className={scss.line}></p>
     </div>
   ));
+
   return (
     <div className={scss.parent}>
       <div className="containerr">
@@ -57,17 +70,23 @@ function Header() {
             className={scss.hamburger}
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <Hamburger size={24} toggled={menuOpen} toggle={setMenuOpen} />
+            <Hamburger
+              color="#2B2929"
+              size={24}
+              toggled={menuOpen}
+              toggle={setMenuOpen}
+            />
           </div>
           <Link className={scss.logo} to="/">
             <img src={logo} alt="Logo" />
           </Link>
-          <Link className={scss.login_bar}>
+          <div className={scss.login_bar} onClick={() => setAuthOpen(true)}>
             <span>
               <FaUser />
             </span>
             Войти
-          </Link>
+          </div>
+          {authOpen && <Authorization setAuthOpen={setAuthOpen} />}
           <nav>
             {navigation}
             <div className={scss.lang_bar}>

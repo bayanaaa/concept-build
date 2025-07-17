@@ -13,12 +13,10 @@ function HomePage() {
     <>
       <Main />
       <Offers />
-      <Travelling/>
+      <Travelling />
       <Reviews />
       <Info />
-      <Blog/>
-      <Footer/>
-      {/* <Header/> */}
+      <Blog />
     </>
   );
 }
