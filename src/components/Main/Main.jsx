@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import scss from "./Main.module.scss";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -13,6 +13,8 @@ function Main() {
   const [from, setFrom] = useState({ value: "", code: "" });
   const [to, setTo] = useState({ value: "", code: "" });
   const [authOpen, setAuthOpen] = useState(false);
+  const cityMenuRef = useRef()
+   
 
   useEffect(() => {
     if (authOpen) {
@@ -68,6 +70,25 @@ function Main() {
       </div>
     ));
 
+    
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (cityMenuRef.current && !cityMenuRef.current.contains(event.target)) {
+        setCityMenu(null);
+      }
+    }
+
+    if (cityMenu) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [cityMenu]);
+
   return (
     <div className={scss.parent}>
       <div className="containerr">
@@ -119,7 +140,7 @@ function Main() {
                   <span className={scss.code}>{to.code}</span>
                 </div>
                 {cityMenu && (
-                  <div className={scss.city_menu}>{destinations}</div>
+                  <div className={scss.city_menu} ref={cityMenuRef}>{destinations}</div>
                 )}
               </section>
               <div className={scss.input_group}>
