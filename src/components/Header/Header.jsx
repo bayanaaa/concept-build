@@ -13,15 +13,15 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
 
-   useEffect(()=>{
-    if(authOpen){
-      document.body.style.height = "100vh"
-      document.body.style.overflow = "hidden"
-    }else{
-      document.body.style.height = "auto"
-      document.body.style.overflow = "auto"
+  useEffect(() => {
+    if (authOpen) {
+      document.body.style.height = "100vh";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.height = "auto";
+      document.body.style.overflow = "auto";
     }
-  },[authOpen])
+  }, [authOpen]);
 
   const navigation = mainArr.map((el, index) => (
     <div key={index} className={scss.nav_block}>
@@ -29,6 +29,7 @@ function Header() {
         <Link
           key={index}
           to={link}
+          onClick={() => setMenuOpen(false)}
           className={`${scss.link} ${
             pathname === link ? scss.active : scss.nonActive
           }`}

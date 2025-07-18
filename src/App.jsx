@@ -14,6 +14,8 @@ import Beliefs from "./pages/Beliefs/Beliefs";
 import About from "./pages/About/About";
 import Vip from "./pages/Vip/Vip";
 import Contacts from "./pages/Contacts/Contacts";
+import Help from "./pages/Help/Help";
+import Visa from "./pages/Visa/Visa";
 
 function App() {
   return (
@@ -31,17 +33,20 @@ function AppContent() {
       <ScrollTop />
       {pathname !== "/" && <Header />}
       <Routes>
+        <Route path="/history" element={<History />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<Article />} />
         <Route path="/vip" element={<Vip />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/history" element={<History />} />
         <Route path="/about" element={<About />} />
         <Route path="/vacancies" element={<Vacancies />} />
         <Route path="/interests" element={<Interests />} />
         <Route path="/guarantee" element={<Guarantee />} />
         <Route path="/beliefs" element={<Beliefs />} />
+        <Route path="/help" element={<Help />} />
+        <Route path="/visa-support" element={<Visa />} />
         <Route path="/sustainable-development" element={<SusDevelopment />} />
+
       </Routes>
       <Footer />
     </>
