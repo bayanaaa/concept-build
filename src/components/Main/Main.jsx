@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import scss from "./Main.module.scss";
 import logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
@@ -7,37 +7,74 @@ import { data, mainArr } from "../../constants/Main";
 import { IoMdAirplane } from "react-icons/io";
 import { FaAngleDown } from "react-icons/fa6";
 import Authorization from "../Authorization/Authorization";
+import Calendar from "../UI/Calendar/Calendar";
+import { TbCalendarMonth } from "react-icons/tb";
+import Passengers from "../UI/Passengers/Passengers";
 
 function Main() {
   const [cityMenu, setCityMenu] = useState(null);
   const [from, setFrom] = useState({ value: "", code: "" });
   const [to, setTo] = useState({ value: "", code: "" });
   const [authOpen, setAuthOpen] = useState(false);
-  const cityMenuRef = useRef()
-   
+  const [departureDate, setDepartureDate] = useState(null);
+  const [returnDate, setReturnDate] = useState(null);
+  const [showCalendar, setShowCalendar] = useState(false);
+  const [calendarType, setCalendarType] = useState("departure");
+  const [showPassengers, setShowPassengers] = useState(false);
+  const [people, setPeople] = useState({
+    adults: 1,
+    children: 0,
+    babies: 0,
+  });
+  const [classType, setClassType] = useState("Economy");
+
+  const cityMenuRef = useRef();
+  const calendarRef = useRef();
+  const passengersRef = useRef();
 
   useEffect(() => {
-    if (authOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-    return () => {
-      document.body.style.overflow = "auto";
+    const handleClickOutside = (event) => {
+      if (cityMenuRef.current && !cityMenuRef.current.contains(event.target)) {
+        setCityMenu(null);
+      }
+      if (calendarRef.current && !calendarRef.current.contains(event.target)) {
+        setShowCalendar(false);
+      }
+      if (
+        passengersRef.current &&
+        !passengersRef.current.contains(event.target)
+      ) {
+        setShowPassengers(false);
+      }
     };
-  }, [authOpen]);
 
-  const navigation = mainArr[0].map(
-    ({ icon: Icon, title, link, soon }, index) => (
-      <Link className={scss.nav_item} key={index} to={link}>
-        <p className={scss.nav_icon}>
-          <Icon />
-        </p>
-        {title}
-        {soon && <span className={scss.soon}>Скоро</span>}
-      </Link>
-    )
-  );
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const formatDate = (date) => {
+    if (!date) return "";
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+  };
+
+  const handleDatesSelected = ({ departureDate, returnDate }) => {
+    setDepartureDate(departureDate);
+    setReturnDate(returnDate || null);
+    setShowCalendar(false);
+  };
+
+  const openCalendar = (type) => {
+    setCalendarType(type);
+    setShowCalendar(true);
+  };
+
+  const formatPassengerText = () => {
+    const total = people.adults + people.children + people.babies;
+    return `${total} ${total === 1 ? "passenger" : "passengers"}`;
+  };
 
   const destinations = data
     .filter((city) =>
@@ -52,7 +89,7 @@ function Main() {
         onClick={() => {
           if (cityMenu === "from") {
             setFrom({ value: city, code });
-          } else if (cityMenu === "to") {
+          } else {
             setTo({ value: city, code });
           }
           setCityMenu(null);
@@ -69,25 +106,6 @@ function Main() {
         </div>
       </div>
     ));
-
-    
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (cityMenuRef.current && !cityMenuRef.current.contains(event.target)) {
-        setCityMenu(null);
-      }
-    }
-
-    if (cityMenu) {
-      document.addEventListener("mousedown", handleClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [cityMenu]);
 
   return (
     <div className={scss.parent}>
@@ -107,12 +125,25 @@ function Main() {
               Войти
             </div>
           </div>
+
           {authOpen && <Authorization setAuthOpen={setAuthOpen} />}
+
           <main>
             <h1>
               Your gateway to the world flights tours <br /> memories
             </h1>
-            <nav>{navigation}</nav>
+            <nav>
+              {mainArr[0].map(({ icon: Icon, title, link, soon }, index) => (
+                <Link className={scss.nav_item} key={index} to={link}>
+                  <p className={scss.nav_icon}>
+                    <Icon />
+                  </p>
+                  {title}
+                  {soon && <span className={scss.soon}>Скоро</span>}
+                </Link>
+              ))}
+            </nav>
+
             <form className="d-flex">
               <section className={scss.dest_section}>
                 <div
@@ -140,25 +171,83 @@ function Main() {
                   <span className={scss.code}>{to.code}</span>
                 </div>
                 {cityMenu && (
-                  <div className={scss.city_menu} ref={cityMenuRef}>{destinations}</div>
+                  <div className={scss.city_menu} ref={cityMenuRef}>
+                    {destinations}
+                  </div>
                 )}
               </section>
-              <div className={scss.input_group}>
-                <input type="date" placeholder="Departure" />
-              </div>
-              <div className={scss.input_group}>
-                <input type="date" placeholder="Return" />
-              </div>
-              <div className={`${scss.input_group} ${scss.lastInput}`}>
-                <div className="d-flex flex-column">
-                  <input type="text" value="1 passenger" />
-                  <span className={scss.type}>Economy</span>
+
+              <div className={scss.dates_data}>
+                <div
+                  className={scss.input_group}
+                  onClick={() => openCalendar("departure")}
+                >
+                  <input
+                    type="text"
+                    placeholder="Departure"
+                    value={formatDate(departureDate)}
+                    readOnly
+                  />
+                  <span className={scss.calendar}>
+                    <TbCalendarMonth color="#9EA9B7" size={22} />
+                  </span>
                 </div>
-                <p className={scss.arrow}>
+
+                <div
+                  className={scss.input_group}
+                  onClick={() => departureDate && openCalendar("return")}
+                >
+                  <input
+                    type="text"
+                    placeholder="Return"
+                    value={formatDate(returnDate)}
+                    readOnly
+                    disabled={!departureDate}
+                  />
+                  <span className={scss.calendar}>
+                    <TbCalendarMonth color="#9EA9B7" size={22} />
+                  </span>
+                </div>
+
+                {showCalendar && (
+                  <div className={scss.calendar_overlay} ref={calendarRef}>
+                    <Calendar
+                      onComplete={handleDatesSelected}
+                      initialDepartureDate={departureDate}
+                      initialReturnDate={returnDate}
+                      defaultSelection={calendarType}
+                    />
+                  </div>
+                )}
+              </div>
+
+              <div
+                className={`${scss.input_group} ${scss.lastInput}`}
+                onClick={() => setShowPassengers(!showPassengers)}
+                ref={passengersRef}
+                style={{ position: "relative" }}
+              >
+                <div className="d-flex flex-column">
+                  <input type="text" value={formatPassengerText()} readOnly />
+                  <span className={scss.type}>{classType}</span>
+                </div>
+                <p className={`${scss.arrow} ${showPassengers ? scss.rotated : ''}`}>
                   <FaAngleDown />
                 </p>
+
+                {showPassengers && (
+                  <div className={scss.passengers_popup}>
+                    <Passengers
+                      people={people}
+                      setPeople={setPeople}
+                      classType={classType}
+                      setClassType={setClassType}
+                    />
+                  </div>
+                )}
               </div>
-              <button type="submit">Search flights</button>
+
+              <Link to='/avia-tickets' className={scss.button}>Search flights</Link>
             </form>
           </main>
         </div>

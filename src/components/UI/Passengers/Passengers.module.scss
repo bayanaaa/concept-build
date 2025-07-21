@@ -1,0 +1,127 @@
+.passenger_bar {
+  margin-left: 200px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+  width: 290px;
+  position: relative;
+
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "SF Pro Display", sans-serif;
+    color: #2B2929;
+    margin-bottom: 15px;
+  }
+
+  .quantity_bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .people {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 500;
+          color: #2B2929;
+          font-family: "SF Pro Display", sans-serif;
+        }
+
+        span {
+          font-size: 12px;
+          font-weight: 400;
+          font-family: "SF Pro Display", sans-serif;
+          color: #9EA9B7;
+          margin-top: 2px;
+        }
+      }
+
+      .quantity {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        align-items: center;
+
+        .minusBtn, .plusBtn {
+          color: #9EA9B7;
+          border: 1px solid #9EA9B7;
+          border-radius: 4px;
+          height: 20px;
+          width: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: all 0.2s;
+
+          &:hover {
+            background: #f5f5f5;
+          }
+        }
+
+        p {
+          margin: 0;
+          font-size: 14px;
+          font-weight: 600;
+          color: #2B2929;
+          font-family: "SF Pro Display", sans-serif;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .class {
+    margin-top: 20px;
+
+    .class_item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+      cursor: pointer;
+      padding: 8px 0;
+      border-radius: 4px;
+
+
+      h3 {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: "SF Pro Display", sans-serif;
+        margin: 0;
+      }
+
+      input[type="radio"] {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .apply_button {
+    width: 100%;
+    padding: 10px;
+    background: #0066FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s;
+
+    &:hover {
+      background: #0052CC;
+    }
+  }
+}

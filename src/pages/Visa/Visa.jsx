@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import scss from "./Visa.module.scss";
 import Banner from "../../components/Banner/Banner";
 import image from "../../assets/imagee.jpg";
-import { visaArr, visaArr2 } from "../../constants/Visa";
+import {
+  dataArr,
+  visaArr,
+  visaArr2,
+  visaArr3,
+  visaArr4,
+} from "../../constants/Visa";
 import { LuSearch } from "react-icons/lu";
 import { FaAngleDown } from "react-icons/fa6";
+import { FaChevronDown } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 function Visa() {
+  const [open, setOpen] = useState(null);
+
   const cards = visaArr.map(({ id, icon: Icon, title, desc }) => (
     <div key={id} className={scss.card}>
       <span className={scss.icon}>
@@ -21,21 +31,67 @@ function Visa() {
     <div key={index} className={scss.block}>
       <div className={scss.header}>
         {" "}
-        <span>№</span> <span>Страна</span>{" "}
+        <div className={scss.group}>
+          <span>№</span> <span>Страна</span>
+        </div>{" "}
         <span>Максимальный срок пребывания</span>
       </div>
       <main className={scss.main}>
-        {el.info.map(({ flag, num, name, days }) => (
+        {el.info.map(({ num, name, days }) => (
           <div className={scss.item} key={num}>
-            <span className={scss.num}>{num}</span>
-            <div className={scss.country}>
-              <img src={flag} alt="flag" />
-              {name}
+            <div className={scss.group}>
+              {" "}
+              <span className={scss.num}>{num}</span>
+              <div className={scss.country}>
+                <div className={scss.img}></div>
+                <span>{name}</span>
+              </div>
             </div>
-            <p className={scss.days}>{days}</p>
+            <span className={scss.days}>{days}</span>
           </div>
         ))}
       </main>
+    </div>
+  ));
+
+  const company_info = visaArr3.map((el, index) => (
+    <div className={scss.info_card} key={index}>
+      <h2>{el.heading}</h2>
+      <p className={scss.intro}>{el.intro}</p>
+      <div className={scss.texts}>
+        {el.info.map(({ img, title }, idx) => (
+          <article key={idx}>
+            <img src={img} alt="icon" />
+            {title}
+          </article>
+        ))}
+      </div>
+    </div>
+  ));
+
+  const proccess = dataArr.map((el) => (
+    <div className={scss.proccess_block}>
+      <div key={el.num} className={scss.proccess_card}>
+        <h4>{el.num}</h4> <span>{el.desc}</span>
+      </div>
+      <p className={scss.line}></p>
+    </div>
+  ));
+
+  const QA = visaArr4.map((el) => (
+    <div className={scss.qa_card} key={el.id}>
+      <article onClick={() => setOpen(open === el.id ? null : el.id)}>
+        <h3>{el.ques}</h3>
+        <span className={`${scss.icon} ${open === el.id ? scss.rotated : ""}`}>
+          <FaChevronDown />
+        </span>
+      </article>
+
+      <div
+        className={`${scss.answer_wrapper} ${open === el.id ? scss.open : ""}`}
+      >
+        <span className={scss.answer}>{el.ans}</span>
+      </div>
     </div>
   ));
 
@@ -98,10 +154,41 @@ function Visa() {
           <h2>Страны с безвизовым режимом для въезда в Кыргызстан</h2>
           <p>
             В соответствии с Законом КР, от виз освобождаются граждане ряда
-            стран сроком до 60 <br /> дней. Актуальную информацию уточняйте на сайте
-            МИД: mfa.gov.kg
+            стран сроком до 60 <br /> дней. Актуальную информацию уточняйте на
+            сайте МИД: mfa.gov.kg
           </p>
-          <main>{data} {data}</main>
+          <main className={scss.information}>
+            {data} {data}
+          </main>
+        </div>
+        <div className={scss.visa4}>
+          <h2>Страны куда граждане Кыргызстана могут поехать без визы</h2>
+          <p>
+            Перечень стран, куда граждане КР могут поехать без виз. Освобождение
+            действует для <br /> владельцев всех категорий паспортов. Уточняйте
+            детали на mfa.gov.kg
+          </p>
+          <main className={scss.information}>
+            {data} {data}
+          </main>
+        </div>
+        <div className={scss.visa6}>
+          <h2>Процесс оформления</h2>
+          <div className={scss.proccess}>{proccess}</div>
+        </div>
+        <div className={scss.visa7}>{company_info}</div>
+        <div className={scss.visa8}>
+          <h2>
+            Часто задаваемые <br /> вопросы?
+          </h2>
+          <div className={scss.qa_block}>{QA}</div>
+        </div>
+        <div className={scss.visa9}>
+          <article>
+            <h2>Получить бесплатную консультацию <br />по оформлению визы</h2>
+            <span>Проконсультируем, поможем советом и найдем ответы на <br /> любые ваши вопросы</span>
+            <Link to='/contacts' className={scss.link}>Получить консультацию</Link>
+          </article>
         </div>
       </div>
     </div>
