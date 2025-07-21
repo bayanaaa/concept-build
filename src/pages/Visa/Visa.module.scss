@@ -156,20 +156,277 @@
       line-height: 100%;
       text-align: center;
     }
-    main {
+    .information {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
+      margin-top: 30px;
       .block {
         display: flex;
         flex-direction: column;
-        .header{
+
+        .header {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          padding: 10px 16px;
+          span {
+            font-size: 20px;
+            white-space: nowrap;
+            font-weight: 500;
+            color: #7e8a99;
+            font-family: "Gilroy-Medium", sans-serif;
+          }
+          .group {
             display: flex;
-            align-items: center;
-            .num{
-                
-            }
+            gap: 20px;
+          }
         }
+        .main {
+          display: flex;
+          flex-direction: column;
+          .item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 80px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: transparent;
+            span {
+              font-size: 20px;
+              font-weight: 500;
+              font-family: "Gilroy-Medium", sans-serif;
+              color: #5c5c5c;
+            }
+            .group {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+            }
+            .country {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              .img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50px;
+                background: url(../../assets/flagg.png);
+                background-position: center !important;
+                background-size: cover !important;
+              }
+            }
+          }
+          .item:nth-of-type(1),
+          .item:nth-of-type(3),
+          .item:nth-of-type(5),
+          .item:nth-of-type(7) {
+            background: #f1f3f5;
+          }
+        }
+      }
+    }
+  }
+  .visa6 {
+    margin-top: 40px;
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      font-family: "Gilroy-Regular", sans-serif;
+      color: #2b2929;
+      text-align: center;
+    }
+    .proccess {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      .proccess_block {
+        display: flex;
+        margin-top: 30px;
+        align-items: center;
+      }
+      .proccess_card {
+        border-radius: 20px;
+        height: 100%;
+        padding: 16px;
+        background: #fefefe;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        h4 {
+          font-size: 30px;
+          font-weight: 600;
+          color: #282828;
+          font-family: "Gilroy-Regular", sans-serif;
+          margin-bottom: 10px;
+        }
+        span {
+          font-size: 20px;
+          font-weight: 400;
+          font-family: "Gilroy-Regular", sans-serif;
+          color: #5c5c5c;
+          line-height: 100%;
+          text-align: center;
+        }
+      }
+      .line {
+        height: 3px;
+        background: #a3d9f7;
+        width: 30px;
+        &.line:nth-of-type(5) {
+          display: none;
+        }
+      }
+    }
+  }
+  .visa7 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+    .info_card {
+      padding: 20px;
+      border-radius: 30px;
+      background: #fefefe;
+      h2 {
+        font-size: 32px;
+        font-weight: 600;
+        color: #2b2929;
+        font-family: "Gilroy-Regular", sans-serif;
+      }
+      .intro {
+        color: #5c5c5c;
+        font-family: "Gilroy-Medium", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 100%;
+        margin: 20px 0 0 0;
+      }
+      .texts {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        gap: 20px;
+        article {
+          display: flex;
+          gap: 20px;
+          font-size: 20px;
+          font-weight: 500;
+          color: #5c5c5c;
+          font-family: "Gilroy-Medium", sans-serif;
+        }
+      }
+    }
+  }
+  .visa8 {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      color: #2b2929;
+      font-family: "Gilroy-Regular", sans-serif;
+      line-height: 100%;
+    }
+    .qa_block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .qa_card {
+        padding: 20px;
+        background: #fefefe;
+        border-radius: 16px;
+
+        article {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+
+          .icon {
+            font-size: 18px;
+            color: #282828;
+            transition: transform 0.3s ease;
+          }
+
+          .rotated {
+            transform: rotate(180deg);
+          }
+
+          h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2b2929;
+            font-family: "Gilroy-Regular", sans-serif;
+          }
+        }
+
+        .answer_wrapper {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: all 0.4s ease;
+        }
+
+        .open {
+          max-height: 500px;
+          opacity: 1;
+          margin-top: 10px;
+        }
+
+        .answer {
+          font-size: 16px;
+          font-weight: 400;
+          font-family: "Gilroy-Regular", sans-serif;
+          color: #9e9e9e;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+  .visa9 {
+    border-radius: 30px;
+    padding: 35px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    height: 300px;
+    margin-top: 40px;
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h2{
+        font-size: 32px;
+        font-weight: 600;
+        color: #005B7D;
+        line-height: 100%;
+        font-family: "Gilroy-Regular", sans-serif;
+        text-align: center;
+      }
+      span{
+        font-size: 20px;
+        font-weight: 500;
+        color: #9EA9B7;
+        line-height: 100%;
+        font-family: "Gilroy-Medium", sans-serif;
+        text-align: center;
+        margin-top: 16px;
+      }
+      .link{
+        border-radius: 12px;
+        padding: 10px 20px;
+        background: #0091D4;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "SF Pro Display", sans-serif;
+        color: #FFFFFF;
+        text-decoration: none;
+        margin-top: 40px;
       }
     }
   }

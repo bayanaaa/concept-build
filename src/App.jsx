@@ -16,6 +16,11 @@ import Vip from "./pages/Vip/Vip";
 import Contacts from "./pages/Contacts/Contacts";
 import Help from "./pages/Help/Help";
 import Visa from "./pages/Visa/Visa";
+import Calendar from "./components/UI/Calendar/Calendar";
+import DatePicker from "./components/UI/Calendar/Calendar";
+import Passengers from "./components/UI/Passengers/Passengers";
+import AirTickets from "./pages/AirTickets/AirTickets";
+import Switch from "./components/UI/Switch/Switch";
 
 function App() {
   return (
@@ -45,7 +50,10 @@ function AppContent() {
         <Route path="/beliefs" element={<Beliefs />} />
         <Route path="/help" element={<Help />} />
         <Route path="/visa-support" element={<Visa />} />
+        <Route path="/avia-tickets" element={<AirTickets />} />
+        <Route path="/p" element={<Switch />} />
         <Route path="/sustainable-development" element={<SusDevelopment />} />
+
 
       </Routes>
       <Footer />
