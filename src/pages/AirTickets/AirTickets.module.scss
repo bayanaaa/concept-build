@@ -87,11 +87,12 @@
           .arrow {
             color: #2b2929;
             transition: 0.2s ease;
+            cursor: pointer;
           }
         }
         .content_header {
           border-top: 1px solid #e6ebef;
-
+          cursor: pointer;
           h3 {
             font-size: 16px;
             font-weight: 600;

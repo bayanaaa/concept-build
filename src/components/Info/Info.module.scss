@@ -60,3 +60,64 @@
     grid-row: 1/3;
   }
 }
+
+@media (max-width: 940px) {
+  .content {
+    .card {
+      padding: 23px;
+      h2 {
+        font-size: 32px;
+      }
+      .title {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    .card:first-of-type {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .content {
+    margin-top: 40px;
+    gap: 10px;
+    .card {
+      border-radius: 20px;
+      h2 {
+        font-size: 24px;
+      }
+      .title {
+        font-size: 12px;
+        margin: 0;
+      }
+      span {
+        font-size: 14px;
+      }
+      .moreBtn {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    .card {
+      padding: 12px;
+      .title {
+        font-size: 8px;
+      }
+      span {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ import luggage from "../../assets/luggage.svg";
 import suitcase from "../../assets/suitcase.svg";
 import Advertisement from "../../components/Advertisement/Advertisement";
 import { FaHeart } from "react-icons/fa6";
-import photo from '../../assets/photo.svg'
+import photo from "../../assets/photo.svg";
 
 function AirTickets() {
   const [save, setSave] = useState(null);
@@ -145,390 +145,425 @@ function AirTickets() {
   ));
 
   return (
-    <div className="containerr">
-      <div className={scss.content}>
-        <img src={photo} alt="" style={{width: '100%', marginBottom: '16px'}} />
-        <div className={scss.main_content}>
-          <div className={scss.block1}>
-            <section className={scss.notify}>
-              <div className={scss.notify_header}>
-                <span>
-                  <FaArrowTrendUp />
-                </span>
-                <h3>Отслеживание цен</h3>
-              </div>
-              <div className={scss.notify_content}>
-                <p>
-                  Получать уведомления <br />о изменении цены
-                </p>
-                <Switch />
-              </div>
-            </section>
-            <section className={scss.filters}>
-              <div className={scss.filters_header}>
-                <h3>Фильтр</h3>
-                <div className={scss.clear}>Сбросить всё</div>
-              </div>
-              <div className={scss.filters_content}>
-                <div className={scss.content_header}>
-                  <h3>Пересадки</h3>
-                  <div className={scss.clear}>
-                    Сбросить{" "}
-                    <span
-                      className={`${scss.arrow} ${flights ? scss.rotated : ""}`}
-                      onClick={() => setFlights(!flights)}
-                    >
-                      <FaAngleDown />
-                    </span>
-                  </div>
+    <div className={scss.parent}>
+      <div className="containerr">
+        <div className={scss.content}>
+          <img
+            src={photo}
+            alt=""
+            style={{ width: "100%", marginBottom: "16px" }}
+          />
+          <div className={scss.main_content}>
+            <div className={scss.block1}>
+              <section className={scss.notify}>
+                <div className={scss.notify_header}>
+                  <span>
+                    <FaArrowTrendUp />
+                  </span>
+                  <h3>Отслеживание цен</h3>
                 </div>
-                {flights && (
-                  <div className={scss.flights_content}>
-                    <div className={scss.flights}>
-                      <div className={scss.input_group}>
-                        <input type="checkbox" name="flights" />
-                        <label htmlFor="flights">Прямые рейсы</label>
-                      </div>
-                      <span>800 сом</span>
-                    </div>
-                    <div className={scss.flights}>
-                      <div className={scss.input_group}>
-                        <input type="checkbox" name="flights" />
-                        <label htmlFor="flights">Прямые рейсы</label>
-                      </div>
-                      <span>800 сом</span>
-                    </div>
-                    <div className={scss.flights}>
-                      <div className={scss.input_group}>
-                        <input type="checkbox" name="flights" />
-                        <label htmlFor="flights">Прямые рейсы</label>
-                      </div>
-                      <span>800 сом</span>
+                <div className={scss.notify_content}>
+                  <p>
+                    Получать уведомления <br />о изменении цены
+                  </p>
+                  <Switch />
+                </div>
+              </section>
+              <section className={scss.filters}>
+                <div className={scss.filters_header}>
+                  <h3>Фильтр</h3>
+                  <div className={scss.clear}>Сбросить всё</div>
+                </div>
+                <div className={scss.filters_content}>
+                  <div
+                    className={scss.content_header}
+                    onClick={() => setFlights(!flights)}
+                  >
+                    <h3>Пересадки</h3>
+                    <div className={scss.clear}>
+                      Сбросить{" "}
+                      <span
+                        className={`${scss.arrow} ${
+                          flights ? scss.rotated : ""
+                        }`}
+                      >
+                        <FaAngleDown />
+                      </span>
                     </div>
                   </div>
-                )}
-                <div className={scss.baggage_content}>
-                  <div className={scss.content_header}>
-                    <h3>Багаж</h3>
-                    <span
-                      className={`${scss.arrow} ${baggage ? scss.rotated : ""}`}
-                      onClick={() => setBaggage(!baggage)}
-                    >
-                      <FaAngleDown />
-                    </span>
-                  </div>
-                  {baggage && (
-                    <div className={scss.baggage}>
+                  {flights && (
+                    <div className={scss.flights_content}>
                       <div className={scss.flights}>
                         <div className={scss.input_group}>
                           <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">
-                            {" "}
-                            <span className={scss.icon}>
-                              <GiRollingSuitcase />
-                            </span>{" "}
-                            Ручная кладь
-                          </label>
+                          <label htmlFor="flights">Прямые рейсы</label>
                         </div>
                         <span>800 сом</span>
                       </div>
                       <div className={scss.flights}>
                         <div className={scss.input_group}>
                           <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">
-                            {" "}
-                            <span className={scss.icon}>
-                              <PiSuitcaseRollingLight />
-                            </span>{" "}
-                            Багаж
-                          </label>
+                          <label htmlFor="flights">Прямые рейсы</label>
+                        </div>
+                        <span>800 сом</span>
+                      </div>
+                      <div className={scss.flights}>
+                        <div className={scss.input_group}>
+                          <input type="checkbox" name="flights" />
+                          <label htmlFor="flights">Прямые рейсы</label>
                         </div>
                         <span>800 сом</span>
                       </div>
                     </div>
                   )}
-                </div>
-                <div className={scss.content_header}>
-                  <h3>Время в пути</h3>
-                  <span
-                    className={`${scss.arrow} ${timeTakes ? scss.rotated : ""}`}
+                  <div className={scss.baggage_content}>
+                    <div
+                      className={scss.content_header}
+                      onClick={() => setBaggage(!baggage)}
+                    >
+                      <h3>Багаж</h3>
+                      <span
+                        className={`${scss.arrow} ${
+                          baggage ? scss.rotated : ""
+                        }`}
+                      >
+                        <FaAngleDown />
+                      </span>
+                    </div>
+                    {baggage && (
+                      <div className={scss.baggage}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">
+                              {" "}
+                              <span className={scss.icon}>
+                                <GiRollingSuitcase />
+                              </span>{" "}
+                              Ручная кладь
+                            </label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">
+                              {" "}
+                              <span className={scss.icon}>
+                                <PiSuitcaseRollingLight />
+                              </span>{" "}
+                              Багаж
+                            </label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div
+                    className={scss.content_header}
                     onClick={() => setTimeTakes(!timeTakes)}
                   >
-                    <FaAngleDown />
-                  </span>
-                </div>
-                {timeTakes && (
-                  <div className={scss.timeTakes_content}>
-                    <div className={scss.timeTakes}>
-                      <header>
-                        <span>Всего</span>
-                        <div className={scss.time}>
-                          <p>0ч 0м</p>
-                          <span className={scss.line}></span>
-                          <p>1ч 0м</p>
-                        </div>
-                      </header>
-                      <input type="range" />
-                    </div>
-                    <div className={scss.timeTakes}>
-                      <header>
-                        <span>Время пересадок</span>
-                        <div className={scss.time}>
-                          <p>0ч 0м</p>
-                          <span className={scss.line}></span>
-                          <p>1ч 0м</p>
-                        </div>
-                      </header>
-                      <input type="range" />
-                    </div>
+                    <h3>Время в пути</h3>
+                    <span
+                      className={`${scss.arrow} ${
+                        timeTakes ? scss.rotated : ""
+                      }`}
+                    >
+                      <FaAngleDown />
+                    </span>
                   </div>
-                )}
-                <div className={scss.content_header}>
-                  <h3>Удобство пересадок</h3>
-                  <span
-                    className={`${scss.arrow} ${transfers ? scss.rotated : ""}`}
+                  {timeTakes && (
+                    <div className={scss.timeTakes_content}>
+                      <div className={scss.timeTakes}>
+                        <header>
+                          <span>Всего</span>
+                          <div className={scss.time}>
+                            <p>0ч 0м</p>
+                            <span className={scss.line}></span>
+                            <p>1ч 0м</p>
+                          </div>
+                        </header>
+                        <input type="range" />
+                      </div>
+                      <div className={scss.timeTakes}>
+                        <header>
+                          <span>Время пересадок</span>
+                          <div className={scss.time}>
+                            <p>0ч 0м</p>
+                            <span className={scss.line}></span>
+                            <p>1ч 0м</p>
+                          </div>
+                        </header>
+                        <input type="range" />
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className={scss.content_header}
                     onClick={() => setTransfers(!transfers)}
                   >
-                    <FaAngleDown />
-                  </span>
-                </div>
-                {transfers && (
-                  <div className={scss.transfers_content}>
-                    <div className={scss.transfers}>
-                      <span>Без повторной регистрации</span>
-                      <Switch />
-                    </div>
-                    <div className={scss.transfers}>
-                      <span>Без виз на пересадках</span>
-                      <Switch />
-                    </div>
-                    <div className={scss.transfers}>
-                      <span>Без смены аэропорта</span>
-                      <Switch />
-                    </div>
-                    <div className={scss.transfers}>
-                      <span>Без смены аэропорта</span>
-                      <Switch />
-                    </div>
+                    <h3>Удобство пересадок</h3>
+                    <span
+                      className={`${scss.arrow} ${
+                        transfers ? scss.rotated : ""
+                      }`}
+                    >
+                      <FaAngleDown />
+                    </span>
                   </div>
-                )}
-                <div className={scss.content_header}>
-                  <h3>Авиакомпании</h3>
-                  <span
-                    className={`${scss.arrow} ${company ? scss.rotated : ""}`}
+                  {transfers && (
+                    <div className={scss.transfers_content}>
+                      <div className={scss.transfers}>
+                        <span>Без повторной регистрации</span>
+                        <Switch />
+                      </div>
+                      <div className={scss.transfers}>
+                        <span>Без виз на пересадках</span>
+                        <Switch />
+                      </div>
+                      <div className={scss.transfers}>
+                        <span>Без смены аэропорта</span>
+                        <Switch />
+                      </div>
+                      <div className={scss.transfers}>
+                        <span>Без смены аэропорта</span>
+                        <Switch />
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className={scss.content_header}
                     onClick={() => setCompany(!company)}
                   >
-                    <FaAngleDown />
-                  </span>
-                </div>
-                {company && (
-                  <div className={scss.company_content}>
-                    <div className={scss.company}>
-                      <article>
-                        <img src={sf} alt="logo" />
-                        <span>Skyfru</span>
-                      </article>
-                      <div className={scss.side}>
-                        <span>800 сом</span>
-                        <input type="checkbox" />
-                      </div>
-                    </div>
-                    <div className={scss.company}>
-                      <article>
-                        <img src={sf} alt="logo" />
-                        <span>Skyfru</span>
-                      </article>
-                      <div className={scss.side}>
-                        <span>800 сом</span>
-                        <input type="checkbox" />
-                      </div>
-                    </div>
-                    <div className={scss.company}>
-                      <article>
-                        <img src={sf} alt="logo" />
-                        <span>Skyfru</span>
-                      </article>
-                      <div className={scss.side}>
-                        <span>800 сом</span>
-                        <input type="checkbox" />
-                      </div>
-                    </div>
-                    <div className={scss.company}>
-                      <article>
-                        <img src={sf} alt="logo" />
-                        <span>Skyfru</span>
-                      </article>
-                      <div className={scss.side}>
-                        <span>800 сом</span>
-                        <input type="checkbox" />
-                      </div>
-                    </div>
-                    <div className={scss.company}>
-                      <article>
-                        <img src={sf} alt="logo" />
-                        <span>Skyfru</span>
-                      </article>
-                      <div className={scss.side}>
-                        <span>800 сом</span>
-                        <input type="checkbox" />
-                      </div>
-                    </div>
+                    <h3>Авиакомпании</h3>
+                    <span
+                      className={`${scss.arrow} ${company ? scss.rotated : ""}`}
+                    >
+                      <FaAngleDown />
+                    </span>
                   </div>
-                )}
-                <div className={scss.content_header}>
-                  <h3>Время</h3>
-                  <span
-                    className={`${scss.arrow} ${time ? scss.rotated : ""}`}
+                  {company && (
+                    <div className={scss.company_content}>
+                      <div className={scss.company}>
+                        <article>
+                          <img src={sf} alt="logo" />
+                          <span>Skyfru</span>
+                        </article>
+                        <div className={scss.side}>
+                          <span>800 сом</span>
+                          <input type="checkbox" />
+                        </div>
+                      </div>
+                      <div className={scss.company}>
+                        <article>
+                          <img src={sf} alt="logo" />
+                          <span>Skyfru</span>
+                        </article>
+                        <div className={scss.side}>
+                          <span>800 сом</span>
+                          <input type="checkbox" />
+                        </div>
+                      </div>
+                      <div className={scss.company}>
+                        <article>
+                          <img src={sf} alt="logo" />
+                          <span>Skyfru</span>
+                        </article>
+                        <div className={scss.side}>
+                          <span>800 сом</span>
+                          <input type="checkbox" />
+                        </div>
+                      </div>
+                      <div className={scss.company}>
+                        <article>
+                          <img src={sf} alt="logo" />
+                          <span>Skyfru</span>
+                        </article>
+                        <div className={scss.side}>
+                          <span>800 сом</span>
+                          <input type="checkbox" />
+                        </div>
+                      </div>
+                      <div className={scss.company}>
+                        <article>
+                          <img src={sf} alt="logo" />
+                          <span>Skyfru</span>
+                        </article>
+                        <div className={scss.side}>
+                          <span>800 сом</span>
+                          <input type="checkbox" />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className={scss.content_header}
                     onClick={() => setTime(!time)}
                   >
-                    <FaAngleDown />
-                  </span>
-                </div>
-                {time && (
-                  <div className={scss.timeTakes_content}>
-                    <div className={scss.timeTakes}>
-                      <header>
-                        <span>Вылет</span>
-                        <div className={scss.time}>
-                          <p>0ч 0м</p>
-                          <span className={scss.line}></span>
-                          <p>1ч 0м</p>
-                        </div>
-                      </header>
-                      <input type="range" />
-                    </div>
-                    <div className={scss.timeTakes}>
-                      <header>
-                        <span>Прилет</span>
-                        <div className={scss.time}>
-                          <p>0ч 0м</p>
-                          <span className={scss.line}></span>
-                          <p>1ч 0м</p>
-                        </div>
-                      </header>
-                      <input type="range" />
-                    </div>
-                  </div>
-                )}
-                <div className={scss.content_header}>
-                  <h3>Модели самолётов</h3>
-                  <div className={scss.clear}>
-                    Выбрать все{" "}
+                    <h3>Время</h3>
                     <span
-                      className={`${scss.arrow} ${models ? scss.rotated : ""}`}
-                      onClick={() => setModels(!models)}
+                      className={`${scss.arrow} ${time ? scss.rotated : ""}`}
                     >
                       <FaAngleDown />
                     </span>
                   </div>
-                </div>
-                {models && (
-                  <div className={scss.models_content}>
-                    <div className={scss.models}>
-                      <div className={scss.flights}>
-                        <div className={scss.input_group}>
-                          <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">AirbusA319</label>
-                        </div>
-                        <span>800 сом</span>
+                  {time && (
+                    <div className={scss.timeTakes_content}>
+                      <div className={scss.timeTakes}>
+                        <header>
+                          <span>Вылет</span>
+                          <div className={scss.time}>
+                            <p>0ч 0м</p>
+                            <span className={scss.line}></span>
+                            <p>1ч 0м</p>
+                          </div>
+                        </header>
+                        <input type="range" />
+                      </div>
+                      <div className={scss.timeTakes}>
+                        <header>
+                          <span>Прилет</span>
+                          <div className={scss.time}>
+                            <p>0ч 0м</p>
+                            <span className={scss.line}></span>
+                            <p>1ч 0м</p>
+                          </div>
+                        </header>
+                        <input type="range" />
                       </div>
                     </div>
-                    <div className={scss.models}>
-                      <div className={scss.flights}>
-                        <div className={scss.input_group}>
-                          <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">AirbusA319</label>
-                        </div>
-                        <span>800 сом</span>
-                      </div>
-                    </div>
-                    <div className={scss.models}>
-                      <div className={scss.flights}>
-                        <div className={scss.input_group}>
-                          <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">AirbusA319</label>
-                        </div>
-                        <span>800 сом</span>
-                      </div>
-                    </div>
-                    <div className={scss.models}>
-                      <div className={scss.flights}>
-                        <div className={scss.input_group}>
-                          <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">AirbusA319</label>
-                        </div>
-                        <span>800 сом</span>
-                      </div>
-                    </div>
-                    <div className={scss.models}>
-                      <div className={scss.flights}>
-                        <div className={scss.input_group}>
-                          <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">AirbusA319</label>
-                        </div>
-                        <span>800 сом</span>
-                      </div>
-                    </div>
-                    <div className={scss.models}>
-                      <div className={scss.flights}>
-                        <div className={scss.input_group}>
-                          <input type="checkbox" name="flights" />
-                          <label htmlFor="flights">AirbusA319</label>
-                        </div>
-                        <span>800 сом</span>
-                      </div>
+                  )}
+                  <div
+                    className={scss.content_header}
+                    onClick={() => setModels(!models)}
+                  >
+                    <h3>Модели самолётов</h3>
+                    <div className={scss.clear}>
+                      Выбрать все{" "}
+                      <span
+                        className={`${scss.arrow} ${
+                          models ? scss.rotated : ""
+                        }`}
+                      >
+                        <FaAngleDown />
+                      </span>
                     </div>
                   </div>
-                )}
-                <div className={scss.content_header}>
-                  <h3>Сортировка</h3>
-                  <div className={scss.clear}>
-                    Сбросить{" "}
-                    <span
-                      className={`${scss.arrow} ${sort ? scss.rotated : ""}`}
-                      onClick={() => setSort(!sort)}
-                    >
-                      <FaAngleDown />
-                    </span>
+                  {models && (
+                    <div className={scss.models_content}>
+                      <div className={scss.models}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">AirbusA319</label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                      <div className={scss.models}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">AirbusA319</label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                      <div className={scss.models}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">AirbusA319</label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                      <div className={scss.models}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">AirbusA319</label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                      <div className={scss.models}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">AirbusA319</label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                      <div className={scss.models}>
+                        <div className={scss.flights}>
+                          <div className={scss.input_group}>
+                            <input type="checkbox" name="flights" />
+                            <label htmlFor="flights">AirbusA319</label>
+                          </div>
+                          <span>800 сом</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  <div
+                    className={scss.content_header}
+                    onClick={() => setSort(!sort)}
+                  >
+                    <h3>Сортировка</h3>
+                    <div className={scss.clear}>
+                      Сбросить{" "}
+                      <span
+                        className={`${scss.arrow} ${sort ? scss.rotated : ""}`}
+                      >
+                        <FaAngleDown />
+                      </span>
+                    </div>
                   </div>
-                </div>
-                {sort && (
-                  <div className={scss.sort_content}>
-                    <div className={scss.sort}>
-                      <input type="radio" name="recommended" />
-                      <label htmlFor="recommended">Рекомендуемые</label>
-                    </div>
-                    <div className={scss.sort}>
-                      <input type="radio" name="cheap" />
-                      <label htmlFor="cheap">Самые дешёвые</label>
-                    </div>
+                  {sort && (
+                    <div className={scss.sort_content}>
+                      <div className={scss.sort}>
+                        <input type="radio" name="recommended" />
+                        <label htmlFor="recommended">Рекомендуемые</label>
+                      </div>
+                      <div className={scss.sort}>
+                        <input type="radio" name="cheap" />
+                        <label htmlFor="cheap">Самые дешёвые</label>
+                      </div>
 
-                    <div className={scss.sort}>
-                      <input type="radio" name="early" />
-                      <label htmlFor="early">С ранним вылетом</label>
+                      <div className={scss.sort}>
+                        <input type="radio" name="early" />
+                        <label htmlFor="early">С ранним вылетом</label>
+                      </div>
+                      <div className={scss.sort}>
+                        <input type="radio" name="early2" />
+                        <label htmlFor="early2">С ранним прибытием</label>
+                      </div>
+                      <div className={scss.sort}>
+                        <input type="radio" name="short" />
+                        <label htmlFor="short">С короткими пересадками</label>
+                      </div>
+                      <div className={scss.sort}>
+                        <input type="radio" name="fast" />
+                        <label htmlFor="fast">Самые быстрые</label>
+                      </div>
                     </div>
-                    <div className={scss.sort}>
-                      <input type="radio" name="early2" />
-                      <label htmlFor="early2">С ранним прибытием</label>
-                    </div>
-                    <div className={scss.sort}>
-                      <input type="radio" name="short" />
-                      <label htmlFor="short">С короткими пересадками</label>
-                    </div>
-                    <div className={scss.sort}>
-                      <input type="radio" name="fast" />
-                      <label htmlFor="fast">Самые быстрые</label>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </section>
+                  )}
+                </div>
+              </section>
+            </div>
+            <div className={scss.block2}>
+              <nav>{navs}</nav>
+              <main>{ticket}</main>
+            </div>
+            <Advertisement />
           </div>
-          <div className={scss.block2}>
-            <nav>{navs}</nav>
-            <main>{ticket}</main>
-          </div>
-          <Advertisement />
+        </div>
+        <div className={scss.details}>
+          
         </div>
       </div>
     </div>

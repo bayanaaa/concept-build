@@ -5,14 +5,14 @@ import img3 from "../assets/img3.jpg";
 export const offerArr = [
   {
     image: img1,
-    title: "🔥 Fly to Dubai from Just $199!",
+    title: "🔥 Летайте в Дубай всего за 199 долларов!",
   },
   {
     image: img2,
-    title: "🛫 Fly Business for Less",
+    title: "🛫 Летайте бизнесом за меньшие деньги",
   },
   {
     image: img3,
-    title: "🎁 Partner Exclusive Offers",
+    title: "🎁 Эксклюзивные предложения от партнеров",
   },
 ];
