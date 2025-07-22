@@ -67,6 +67,12 @@
   }
 }
 
+@media (max-width: 900px) {
+  .content {
+    margin-left: 0 !important;
+  }
+}
+
 @media (max-width: 500px) {
   .content {
     margin-top: 40px;

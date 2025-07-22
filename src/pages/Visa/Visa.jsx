@@ -130,17 +130,19 @@ function Visa() {
             Введите название страны, чтобы быстро получить актуальную информацию
             о визах
           </span>
-          <div className={scss.search_bar}>
-            <span>
-              <LuSearch size={18} />
-            </span>
-            <input
-              type="text"
-              placeholder="Введите страну для визовой информации"
-            />
-            <span>
-              <FaAngleDown />
-            </span>
+          <div className="d-flex justify-content-center ">
+            <div className={scss.search_bar}>
+              <span>
+                <LuSearch size={18} />
+              </span>
+              <input
+                type="text"
+                placeholder="Введите страну для визовой информации"
+              />
+              <span>
+                <FaAngleDown />
+              </span>
+            </div>
           </div>
           <iframe
             style={{ marginTop: "40px", borderRadius: "30px" }}
@@ -185,9 +187,17 @@ function Visa() {
         </div>
         <div className={scss.visa9}>
           <article>
-            <h2>Получить бесплатную консультацию <br />по оформлению визы</h2>
-            <span>Проконсультируем, поможем советом и найдем ответы на <br /> любые ваши вопросы</span>
-            <Link to='/contacts' className={scss.link}>Получить консультацию</Link>
+            <h2>
+              Получить бесплатную консультацию <br />
+              по оформлению визы
+            </h2>
+            <span>
+              Проконсультируем, поможем советом и найдем ответы на <br /> любые
+              ваши вопросы
+            </span>
+            <Link to="/contacts" className={scss.link}>
+              Получить консультацию
+            </Link>
           </article>
         </div>
       </div>

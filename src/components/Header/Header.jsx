@@ -7,6 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { mainArr } from "../../constants/Main";
 import ru from "../../assets/ru.svg";
 import Authorization from "../Authorization/Authorization";
+import { IoMdClose } from "react-icons/io";
 
 function Header() {
   const { pathname } = useLocation();
@@ -14,14 +15,14 @@ function Header() {
   const [authOpen, setAuthOpen] = useState(false);
 
   useEffect(() => {
-    if (authOpen) {
+    if (authOpen || menuOpen) {
       document.body.style.height = "100vh";
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.height = "auto";
       document.body.style.overflow = "auto";
     }
-  }, [authOpen]);
+  }, [authOpen || menuOpen]);
 
   const navigation = mainArr.map((el, index) => (
     <div key={index} className={scss.nav_block}>
@@ -70,6 +71,7 @@ function Header() {
           <div
             className={scss.hamburger}
             onClick={() => setMenuOpen(!menuOpen)}
+            style={menuOpen && window.innerWidth <= 900 ? { zIndex: "-3" } : {}}
           >
             <Hamburger
               color="#2B2929"
@@ -85,10 +87,10 @@ function Header() {
             <span>
               <FaUser />
             </span>
-            Войти
+            <div className={scss.login_bar}>Войти</div>
           </div>
           {authOpen && <Authorization setAuthOpen={setAuthOpen} />}
-          <nav>
+          <nav className={scss.original_nav}>
             {navigation}
             <div className={scss.lang_bar}>
               <img src={ru} alt="ru" />
@@ -101,6 +103,22 @@ function Header() {
               ></div>
             )}
           </nav>
+          <nav className={`${scss.mobile_nav} ${menuOpen ? scss.open : ""}`}>
+            <span onClick={() => setMenuOpen(false)} className={scss.close}>
+              <IoMdClose />
+            </span>
+            {navigation}
+            <div className={scss.mobile_lang_bar}>
+              <img src={ru} alt="ru" />
+              <span style={!menuOpen ? { display: "none" } : {}}>Русский</span>
+            </div>
+          </nav>
+          {menuOpen && (
+            <div
+              className={`${scss.mobile_nav_bg} ${menuOpen ? scss.open : ""}`}
+              onClick={() => setMenuOpen(false)}
+            ></div>
+          )}
         </div>
       </div>
     </div>

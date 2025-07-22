@@ -39,7 +39,7 @@ function Reviews() {
               </p>
             </div>
           </div>
-          <main>{cards}</main>
+          <div className={scss.revCard}>{cards}</div>
         </div>
       ) : (
         <main>{cards}</main>

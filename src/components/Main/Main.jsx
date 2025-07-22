@@ -128,7 +128,7 @@ function Main() {
 
           {authOpen && <Authorization setAuthOpen={setAuthOpen} />}
 
-          <main>
+          <main style={{overflowX: 'unset'}}>
             <h1>
               Ваши ворота в мир полетов воспоминаний <br /> о турах
             </h1>
