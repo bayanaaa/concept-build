@@ -10,61 +10,61 @@ export const socialArr = [PiTelegramLogo, FaWhatsapp, FaInstagram]
 
 export const footerArr = [
   {
-    heading: "Company",
+    heading: "Компания",
     info: [
       {
-        title: "About Us",
+        title: "О нас",
         link: "/about",
       },
       {
-        title: "Careers",
-        link: "/careers",
+        title: "Вакансии",
+        link: "/vacancies",
       },
       {
-        title: "Terms of Service",
+        title: "Условия предоставления услуг",
         link: "/terms-of-service",
       },
       {
-        title: "Privacy Policy",
+        title: "Политика конфиденциальности",
         link: "/privacy-policy",
       },
       {
-        title: "Cookie Settings",
+        title: "Настройки cookie",
         link: "/cookie-settings",
       },
     ],
   },
   {
-    heading: "Travelers",
+    heading: "Путешественники",
     info: [
       {
-        title: "How It Works",
+        title: "Как это работает",
         link: "/how-it-works",
       },
       {
-        title: "My Bookings",
+        title: "Мои бронирования",
         link: "/my-bookings",
       },
       {
-        title: "Payment & Refunds",
+        title: "Оплата и возврат",
         link: "/payment-and-refunds",
       },
       {
-        title: "Help Center",
+        title: "Центр помощи",
         link: "/help-center",
       },
       {
-        title: "Travel Tips & Articles",
-        link: "/travel-tips",
+        title: "Советы и статьи о путешествиях",
+        link: "/blog",
       },
     ],
   },
   {
-    heading: "Contact",
+    heading: "Контакты",
     info: [
       {
         icon: CiLocationOn,
-        title: "123 Toktogul Street, Bishkek",
+        title: "Улица Токтогула, 123, Бишкек",
         onlyInfo: true,
         link: "https://2gis.kg/tokmok/geo/70030076154952013",
       },
@@ -82,7 +82,7 @@ export const footerArr = [
       },
       {
         icon: IoTimeOutline,
-        title: "Mon–Sat, 9:00–18:00",
+        title: "пн-сб, 9:00-18:00",
         onlyInfo: true,
       },
     ],

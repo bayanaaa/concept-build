@@ -8,43 +8,43 @@ import photo2 from "../assets/photo2.jpg";
 export const travelArr = [
   {
     icon: GiCommercialAirplane,
-    title: "City",
+    title: "Города",
   },
   {
     icon: PiChairFill,
-    title: "Ocean",
+    title: "Океан",
   },
   {
     icon: FaCar,
-    title: "Mountain",
+    title: "Горы",
   },
   {
     icon: PiChairFill,
-    title: "Cars",
+    title: "Пребывание",
   },
   {
     icon: PiChairFill,
-    title: "Stays",
+    title: "Пребывание",
   },
   {
     icon: FaCar,
-    title: "Stays",
+    title: "Пребывание",
   },
   {
     icon: FaCar,
-    title: "Cars",
+    title: "Машины",
   },
   {
     icon: FaCar,
-    title: "Cars",
+    title: "Машины",
   },
   {
     icon: FaCar,
-    title: "Cars",
+    title: "Машины",
   },
   {
     icon: FaUmbrellaBeach,
-    title: "Packages",
+    title: "Пакеты",
   },
 ];
 
@@ -55,7 +55,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -63,7 +65,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -71,7 +75,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -79,7 +85,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -87,7 +95,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -95,7 +105,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -103,7 +115,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -111,7 +125,9 @@ export const travelData = [
     city: "Paris",
     country: "France",
     price: "$800",
-    type: "City",
+    type: "Города",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -119,7 +135,10 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Ocean",
+    type: "Океан",
+
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -127,7 +146,9 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Ocean",
+    type: "Океан",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -135,7 +156,10 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Ocean",
+    type: "Океан",
+
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -143,7 +167,10 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Ocean",
+    type: "Океан",
+
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -151,7 +178,10 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Mountain",
+    type: "Горы",
+
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -159,7 +189,10 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Mountain",
+    type: "Горы",
+
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -167,7 +200,10 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Mountain",
+    type: "Горы",
+
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -175,7 +211,9 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Cars",
+    type: "Машины",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -183,7 +221,9 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Stays",
+    type: "Пребывание",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo2,
@@ -191,7 +231,9 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Stays",
+    type: "Пребывание",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
   {
     image: photo1,
@@ -199,6 +241,8 @@ export const travelData = [
     city: "Pacific Ocean",
     country: "Ocean",
     price: "$500",
-    type: "Packages",
+    type: "Пакеты",
+    when: "2 августа, сб - 8 августа, пт",
+    about: "1 ч, без пересадок",
   },
 ];

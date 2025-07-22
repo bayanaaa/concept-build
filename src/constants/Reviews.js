@@ -6,20 +6,34 @@ export const reviewArr = [
     profile_pic: profilepic,
     email: "ivanov@example.com",
     review_text:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took ",
+      "Отличный сервис, внимательные менеджеры и выгодные предложения. ",
   },
   {
     name: "Иван Иванов",
     profile_pic: profilepic,
     email: "ivanov@example.com",
     review_text:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took ",
+      "Отличный сервис, внимательные менеджеры и выгодные предложения. ",
   },
   {
     name: "Иван Иванов",
     profile_pic: profilepic,
     email: "ivanov@example.com",
     review_text:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took ",
+      "Отличный сервис, внимательные менеджеры и выгодные предложения. ",
+  },
+  {
+    name: "Иван Иванов",
+    profile_pic: profilepic,
+    email: "ivanov@example.com",
+    review_text:
+      "Отличный сервис, внимательные менеджеры и выгодные предложения. ",
+  },
+  {
+    name: "Иван Иванов",
+    profile_pic: profilepic,
+    email: "ivanov@example.com",
+    review_text:
+      "Отличный сервис, внимательные менеджеры и выгодные предложения. ",
   },
 ];

@@ -26,7 +26,7 @@ function Main() {
     children: 0,
     babies: 0,
   });
-  const [classType, setClassType] = useState("Economy");
+  const [classType, setClassType] = useState("Эконом");
 
   const cityMenuRef = useRef();
   const calendarRef = useRef();
@@ -73,7 +73,7 @@ function Main() {
 
   const formatPassengerText = () => {
     const total = people.adults + people.children + people.babies;
-    return `${total} ${total === 1 ? "passenger" : "passengers"}`;
+    return `${total} ${total === 1 ? "пассажир" : "пассаж."}`;
   };
 
   const destinations = data
@@ -130,7 +130,7 @@ function Main() {
 
           <main>
             <h1>
-              Your gateway to the world flights tours <br /> memories
+              Ваши ворота в мир полетов воспоминаний <br /> о турах
             </h1>
             <nav>
               {mainArr[0].map(({ icon: Icon, title, link, soon }, index) => (
@@ -152,7 +152,7 @@ function Main() {
                 >
                   <input
                     type="text"
-                    placeholder="From"
+                    placeholder="Откуда"
                     value={from.value}
                     readOnly
                   />
@@ -164,7 +164,7 @@ function Main() {
                 >
                   <input
                     type="text"
-                    placeholder="To"
+                    placeholder="Куда"
                     value={to.value}
                     readOnly
                   />
@@ -184,7 +184,7 @@ function Main() {
                 >
                   <input
                     type="text"
-                    placeholder="Departure"
+                    placeholder="Когда"
                     value={formatDate(departureDate)}
                     readOnly
                   />
@@ -199,7 +199,7 @@ function Main() {
                 >
                   <input
                     type="text"
-                    placeholder="Return"
+                    placeholder="Обратно"
                     value={formatDate(returnDate)}
                     readOnly
                     disabled={!departureDate}

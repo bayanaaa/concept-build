@@ -43,12 +43,12 @@ function Footer() {
   return (
     <div className="containerr">
       <div className={scss.content} style={pathname !== '/' ? {marginLeft: "80px"} : {}}>
-        <div className='d-flex justify-content-between'>
+        <div className='d-flex justify-content-between flex-wrap gap-5'>
           <div className={scss.main}>{navigations}</div>
           <div className="d-flex gap-4">{socials}</div>
         </div>
         <p className={scss.bottom}>
-          © 2025 Kyrgyz Concept. All rights reserved.
+          © 2025 Kyrgyz Concept. Все права защищены.
         </p>
       </div>
     </div>

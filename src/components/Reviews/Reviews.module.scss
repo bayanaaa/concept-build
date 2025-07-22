@@ -12,12 +12,17 @@ $font-secondary: "Poppins", sans-serif;
     display: flex;
     align-items: center;
     font-size: 40px;
+    line-height: 100%;
     gap: 8px;
     color: #282828;
     font-weight: 600;
+    // white-space: nowrap;
+    margin: 0;
     h2 {
+      line-height: 100%;
       font-size: 40px;
       color: #0091d4;
+      white-space: nowrap;
       font-weight: 600;
       margin: 0;
     }
@@ -26,6 +31,7 @@ $font-secondary: "Poppins", sans-serif;
     color: #5e5e5e;
     text-align: center;
     font-weight: 400;
+    line-height: 100%;
     margin: 0;
     font-size: 20px;
   }
@@ -34,14 +40,27 @@ main {
   display: flex;
   margin-top: 40px;
   gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   .review_card {
+    max-width: 420px;
+    flex-shrink: 0;
     background: #fff;
     border-radius: 20px;
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
     .header {
       display: flex;
       gap: 10px;
-      margin-bottom: 20px;
+
       aside {
         h3 {
           font-size: 15px;
@@ -49,6 +68,7 @@ main {
           color: #282828;
           margin: 0;
         }
+
         span {
           font-size: 14px;
           font-weight: 400;
@@ -56,18 +76,68 @@ main {
         }
       }
     }
-    .review_text {
-      font-size: 14px;
-      font-weight: 400;
+
+    .text {
+      font-size: 24px;
+      font-weight: 500;
       font-family: $font-secondary;
-      color: #282828;
+      line-height: 100%;
+      color: #5c5c5c;
     }
-    .stars {
-      color: #f4d064;
-      display: flex;
-      gap: 5px;
-      font-size: 18px;
-      margin-top: 20px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .content {
+    .h1,
+    h2 {
+      font-size: 35px;
+    }
+  }
+}
+
+@media (max-width: 1250px) {
+  .content {
+    .h1 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .content {
+    margin-top: 40px;
+
+    .h1,
+    h2 {
+      font-size: 24px !important;
+    }
+    .heading {
+      font-size: 14px;
+      margin-top: 16px;
+    }
+  }
+  main {
+    margin-top: 30px;
+    .review_card {
+      max-width: 320px;
+      padding: 12px;
+      .text {
+        font-size: 16px;
+      }
+      .header {
+        aside {
+          h3 {
+            font-size: 15px;
+          }
+          span {
+            font-size: 14px;
+          }
+        }
+      }
     }
   }
 }

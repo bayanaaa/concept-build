@@ -11,7 +11,7 @@ import Footer from "../components/Footer/Footer";
 function HomePage() {
   return (
     <>
-      <Main />
+      {/* <Main /> */}
       <Offers />
       <Travelling />
       <Reviews />

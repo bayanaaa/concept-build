@@ -5,7 +5,7 @@ import image3 from "../assets/item3.jpg";
 export const blogArr = [
   {
     image: image1,
-    title: "Lorem Ipsum ",
+    title: "Как получить визу быстро ",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
   },
   {
