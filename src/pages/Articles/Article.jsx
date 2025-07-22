@@ -18,6 +18,10 @@ function Article() {
     slidesToScroll: 1,
   };
 
+   const handleClick = () => {
+   window.open("/articles", "_blank");
+  };
+
   const navigation = artNav.map(({ icon: Icon, title }, index) => (
     <div
       key={index}
@@ -35,7 +39,7 @@ function Article() {
 
   const cards = artPost.map(
     ({ image, type, date, category, heading, desc, styles }, index) => (
-      <div key={index} className={scss.art_card}>
+      <div key={index} className={scss.art_card} onClick={handleClick}>
         <img src={image} alt="image" />
         <div className={scss.upper_part}>
           <span className={`${scss.category} ${styles}`}>{category}</span>

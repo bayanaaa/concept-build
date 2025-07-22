@@ -562,9 +562,7 @@ function AirTickets() {
             <Advertisement />
           </div>
         </div>
-        <div className={scss.details}>
-          
-        </div>
+        
       </div>
     </div>
   );

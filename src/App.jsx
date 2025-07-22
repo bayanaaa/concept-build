@@ -21,6 +21,8 @@ import DatePicker from "./components/UI/Calendar/Calendar";
 import Passengers from "./components/UI/Passengers/Passengers";
 import AirTickets from "./pages/AirTickets/AirTickets";
 import Switch from "./components/UI/Switch/Switch";
+import Read from "./pages/Read/Read";
+import Tours from "./pages/Tours/Tours";
 
 function App() {
   return (
@@ -41,6 +43,7 @@ function AppContent() {
         <Route path="/history" element={<History />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<Article />} />
+        <Route path="/articles" element={<Read />} />
         <Route path="/vip" element={<Vip />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />
@@ -48,7 +51,8 @@ function AppContent() {
         <Route path="/interests" element={<Interests />} />
         <Route path="/guarantee" element={<Guarantee />} />
         <Route path="/beliefs" element={<Beliefs />} />
-        <Route path="/help" element={<Help />} />
+        <Route path="/tours" element={<Tours />} />
+        <Route path="/help-center" element={<Help />} />
         <Route path="/visa-support" element={<Visa />} />
         <Route path="/avia-tickets" element={<AirTickets />} />
         <Route path="/p" element={<Switch />} />

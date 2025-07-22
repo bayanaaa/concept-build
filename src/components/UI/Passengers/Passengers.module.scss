@@ -125,3 +125,82 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .passenger_bar {
+    margin-left: 0; 
+    width: 100%; 
+    padding: 15px; 
+    border-radius: 12px;
+
+    h2 {
+      font-size: 14px; 
+      margin-bottom: 10px;
+    }
+
+    .quantity_bar {
+      gap: 8px;
+
+      .people {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+
+        .info {
+          h3 {
+            font-size: 12px; 
+          }
+
+          span {
+            font-size: 10px; 
+          }
+        }
+
+        .quantity {
+          grid-template-columns: repeat(3, 1fr); 
+          gap: 4px;
+
+          .minusBtn,
+          .plusBtn {
+            height: 18px;
+            width: 18px;
+            font-size: 12px;
+          }
+
+          p {
+            font-size: 12px; 
+          }
+        }
+      }
+    }
+
+    .class {
+      margin-top: 15px;
+
+      h2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .class_item {
+        padding: 6px 0;
+        margin-bottom: 4px;
+
+        h3 {
+          font-size: 12px;
+        }
+
+        input[type="radio"] {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .apply_button {
+      padding: 8px;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+  }
+}

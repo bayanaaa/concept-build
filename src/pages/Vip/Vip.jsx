@@ -82,7 +82,7 @@ function Vip() {
             "Бронирование и премиальные услуги для тех, кто ценит комфорт, скорость и персональный подход."
           }
         />
-        <div className={scss.nav}>{navs}</div>
+        <div className={scss.nav_wrapper}><div className={scss.nav}>{navs}</div></div>
         <main>{cards}</main>
         <section>{cards2}</section>
         <section className={scss.section}>{gallary}</section>

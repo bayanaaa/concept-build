@@ -1,30 +1,35 @@
 .parent {
-  // background: #fff;
   display: flex;
   align-items: center;
+
   .content {
     padding: 0 20px 0 10px;
     display: flex;
     height: 80px;
-    // background: #ffff;
     justify-content: space-between;
     align-items: center;
     z-index: 1111;
     position: relative;
-    .hamburger{
+
+    .hamburger {
       z-index: 44;
     }
-    nav {
+
+    
+
+    .original_nav {
       display: flex;
+      height: 100vh;
       z-index: 6;
       flex-direction: column;
       position: absolute;
-      // border-radius: 5px;
       background: #fff;
       top: 0;
       padding: 90px 0 10px 0;
       left: 0px;
       overflow: hidden;
+
+      
       .nav_block {
         margin: 0 10px 10px 10px;
 
@@ -35,6 +40,7 @@
           border-radius: 2px;
           background: #5c5c5c4d;
         }
+
         .link {
           display: flex;
           align-items: center;
@@ -49,13 +55,16 @@
           color: #5c5c5c;
           text-decoration: none;
           transition: all 0.2s ease;
+
           .icon {
             color: #5c5c5c;
             font-size: 18px;
           }
+
           .title {
             position: relative;
             width: 100%;
+
             .soon {
               position: absolute;
               top: -20px;
@@ -72,35 +81,44 @@
             }
           }
         }
+
         .link:hover {
           color: #2b2929;
           background: #a3d9f780;
+
           .icon {
             color: #2b2929;
           }
         }
+
         .active {
           background: #0391d4;
           color: #fff;
+
           .icon {
             color: #fff;
           }
+
           &:hover {
             background: #0391d4;
             color: #fff;
+
             .icon {
               color: #fff;
             }
           }
         }
+
         .nonActive {
           background: transparent;
           color: #9ea9b7;
+
           .icon {
             color: #9ea9b7;
           }
         }
       }
+
       .lang_bar {
         margin: 0 10px 10px 10px;
         padding: 0 10px;
@@ -108,12 +126,14 @@
         cursor: pointer;
         align-items: center;
         gap: 12px;
+
         span {
           font-size: 16px;
           color: #5c5c5c;
           font-weight: 400;
         }
       }
+
       .nav_bg {
         position: fixed;
         top: 80px;
@@ -122,10 +142,10 @@
         bottom: 0;
         width: 100vw;
         height: calc(100vh - 80px);
-        // background: #0000004D;
         z-index: -1;
       }
     }
+
     .login_bar {
       display: flex;
       gap: 10px;
@@ -134,6 +154,186 @@
       text-decoration: none;
       cursor: pointer;
       font-weight: 600;
+    }
+
+    .mobile_nav {
+      display: none;
+      z-index: 6;
+      flex-direction: column;
+      position: fixed;
+      background: #fff;
+      top: 0;
+      left: 0px;
+      padding: 90px 0 10px 0;
+      overflow: hidden;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+
+      .close{
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 32px;
+        color:#2B2929;
+      }
+
+      &.open {
+        transform: translateX(0);
+      }
+
+      .nav_block {
+        margin: 0 10px 10px 10px;
+
+        .line {
+          width: 100%;
+          height: 1px;
+          margin: 0;
+          border-radius: 2px;
+          background: #5c5c5c4d;
+        }
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 10px;
+          background: transparent;
+          border-radius: 6px;
+          white-space: nowrap;
+          padding: 8px 12px;
+          font-size: 16px;
+          font-weight: 400;
+          color: #5c5c5c;
+          text-decoration: none;
+          transition: all 0.2s ease;
+
+          .icon {
+            color: #5c5c5c;
+            font-size: 18px;
+          }
+
+          .title {
+            position: relative;
+            width: 100%;
+
+            .soon {
+              position: absolute;
+              top: -20px;
+              right: -10px;
+              z-index: 3;
+              background: #f07f1a;
+              border-radius: 22px;
+              font-size: 12px;
+              line-height: 20px;
+              color: #fff;
+              padding: 2px 8px;
+              font-family: "SF Pro Display", sans-serif;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .link:hover {
+          color: #2b2929;
+          background: #a3d9f780;
+
+          .icon {
+            color: #2b2929;
+          }
+        }
+
+        .active {
+          background: #0391d4;
+          color: #fff;
+
+          .icon {
+            color: #fff;
+          }
+
+          &:hover {
+            background: #0391d4;
+            color: #fff;
+
+            .icon {
+              color: #fff;
+            }
+          }
+        }
+
+        .nonActive {
+          background: transparent;
+          color: #9ea9b7;
+
+          .icon {
+            color: #9ea9b7;
+          }
+        }
+      }
+
+      .mobile_lang_bar {
+        margin: 0 10px 10px 10px;
+        padding: 0 10px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        gap: 12px;
+
+        span {
+          font-size: 16px;
+          color: #5c5c5c;
+          font-weight: 400;
+        }
+      }
+
+  
+
+    }
+        .mobile_nav_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 5; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+
+  &.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+  }
+}
+
+@media (max-width: 900px) {
+  .parent .content {
+    .login_bar {
+      .login_bar {
+        display: none;
+      }
+    }
+    .original_nav {
+      display: none;
+    }
+
+    .mobile_nav {
+      display: flex;
+      height: 100vh;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .content {
+    .logo {
+      img {
+        width: 100px;
+      }
     }
   }
 }

@@ -194,3 +194,70 @@
     background: #e05e00;
   }
 }
+
+@media (max-width: 750px) {
+  .calendar {
+    width: 100%; // Полная ширина экрана
+    padding: 15px; // Уменьшаем отступы
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); // Легче тень
+  }
+
+  .header {
+    flex-direction: column; // Стек заголовок и чекбокс вертикально
+    align-items: flex-start;
+    gap: 10px;
+
+    h3 {
+      font-size: 14px; // Уменьшаем шрифт
+    }
+
+    .need {
+      font-size: 12px; // Уменьшаем шрифт чекбокса
+      padding: 8px 10px;
+    }
+  }
+
+  .month_navigation {
+    align-items: center;
+    gap: 10px;
+
+    h4 {
+      font-size: 14px; // Уменьшаем шрифт месяцев
+      margin: 0;
+    }
+
+    span {
+      font-size: 18px; // Уменьшаем стрелки
+    }
+  }
+
+  .months_wrapper {
+    flex-direction: column; // Месяцы друг под другом
+    gap: 20px;
+  }
+
+  .month_container {
+    width: 100%; // Каждый месяц занимает всю ширину
+  }
+
+  .weekdays {
+    font-size: 10px; // Уменьшаем шрифт дней недели
+    margin-bottom: 4px;
+  }
+
+  .days_grid {
+    gap: 2px; // Уменьшаем промежутки
+    .day {
+      padding: 6px; // Уменьшаем внутренние отступы
+      font-size: 12px; // Уменьшаем шрифт дней
+    }
+  }
+
+  .selectedDeparture,
+  .selectedReturn,
+  .disabled,
+  .empty {
+    padding: 6px;
+    font-size: 12px;
+  }
+}

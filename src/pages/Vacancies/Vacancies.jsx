@@ -114,7 +114,7 @@ function Vacancies() {
           <header>
             <h2>Открытые вакансии</h2>
             <a href="/vacancies">
-              Смотреть все вакансии{" "}
+             <p className="m-0"> Смотреть все вакансии{" "}</p>
               <span className={scss.icon}>
                 <FaArrowUp style={{ transform: "rotate(45deg)" }} />
               </span>

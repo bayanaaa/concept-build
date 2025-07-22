@@ -164,6 +164,7 @@
       top: 0;
       bottom: 0;
       left: 0;
+      background-size: contain;
       right: 0;
       object-fit: cover;
       background-position: center;
@@ -200,6 +201,149 @@
         width: 35px;
         height: 35px;
         border-radius: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-left: 0;
+    .belief1 {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 0;
+      row-gap: 20px;
+    }
+    main {
+      overflow-x: unset;
+      grid-template-columns: 1fr;
+      .main {
+        height: auto !important;
+      }
+      .principle_card {
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        position: unset;
+        article {
+          position: unset;
+        }
+        img {
+          // position: unset;
+          // display: flex;
+          // justify-content: flex-end;
+          // align-items: end;
+          // width: 100px;
+          display: none
+        }
+      }
+      .principle_card:nth-of-type(3) {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      .principle_card:nth-of-type(1) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      .principle_card:nth-of-type(2) {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+      .principle_card:nth-of-type(4) {
+        grid-column: 1/2;
+        grid-row: 5/6;
+      }
+      .principle_card:nth-of-type(5) {
+        grid-column: 1/2;
+        grid-row: 4/5;
+      }
+      .principle_card:nth-of-type(6) {
+        grid-column: 1/2;
+        grid-row: 6/7;
+      }
+      .principle_card:nth-of-type(7) {
+        grid-column: 1/2;
+        grid-row: 8/9;
+      }
+    }
+  }
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .parent {
+    margin-top: 30px;
+    .child1 {
+      padding: 0;
+      height: 230px;
+      span {
+        font-size: 16px;
+        bottom: 15px;
+        left: 15px;
+      }
+    }
+    .child2 {
+      padding: 16px;
+      height: 180px;
+      h3 {
+        font-size: 24px;
+      }
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    main{
+      gap: 0;
+      row-gap: 10px;
+      .principle{
+        // height: 60px;
+        h2{
+          font-size: 20px;
+        }
+      }
+      .principle_card{
+        article{
+          span{
+            font-size: 16px;
+          }
+          h2{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .belief1 {
+      margin-top: 30px;
+      padding: 16px;
+      .box1 {
+        h2 {
+          font-size: 24px;
+        }
+        span {
+          font-size: 16px;
+        }
+      }
+      .box2 {
+        gap: 10px;
+        .info_card {
+          gap: 5px;
+          article {
+            span {
+              font-size: 16px;
+            }
+          }
+        }
       }
     }
   }

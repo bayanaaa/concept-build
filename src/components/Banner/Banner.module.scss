@@ -40,3 +40,46 @@
     background-repeat: no-repeat;
   }
 }
+
+@media (max-width: 870px) {
+  .banner {
+    height: 380px;
+    width: 100%;
+    h2 {
+      font-size: 32px !important;
+      width: 600px;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .banner {
+    padding-top: 170px;
+    padding: 180px 16px 16px 16px;
+    &::before {
+      bottom: 50%;
+      left: 0;
+    }
+    h2 {
+      font-size: 28px;
+      white-space: wrap;
+      width: unset;
+    }
+    .intro {
+      font-size: 16px;
+      color: #ffffffe5;
+      width: unset;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .banner {
+    h2 {
+      font-size: 28px !important;
+    }
+    .intro {
+      font-size: 15px;
+    }
+  }
+}

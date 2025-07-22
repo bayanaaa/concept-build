@@ -15,6 +15,10 @@
   display: none !important;
 }
 
+::-webkit-x-scrollbar{
+  display: none
+}
+
 .react-tel-input .flag-dropdown {
   border: none !important;
 }
