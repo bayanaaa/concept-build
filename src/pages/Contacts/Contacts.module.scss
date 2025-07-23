@@ -207,3 +207,55 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .content{
+    margin-left: 0;
+  }
+  .block {
+      grid-template-columns: 1fr; // одна колонка вместо двух
+      gap: 30px;
+    }
+    .block2 .offices {
+      grid-template-columns: repeat(2, 1fr); // две карточки в ряд
+    }
+}
+
+
+  @media (max-width: 768px) {
+    .block {
+      // убираем внутренние отступы, чтобы форма и инфо заняли всю ширину
+      grid-template-columns: 1fr !important;
+    }
+    .block .info main {
+      grid-template-columns: 1fr !important; // контакты в одну колонку
+    }
+    .block2 .offices {
+      grid-template-columns: 1fr !important; // одна карточка в ряд
+    }
+  }
+
+  @media (max-width: 480px) {
+    .block form {
+      padding: 16px !important;
+      grid-template-columns: 1fr !important; // инпуты в одну колонку
+      gap: 12px !important;
+    }
+    .block .info h2 {
+      font-size: 20px !important;
+    }
+    .block .info .intro,
+    .block .info .bottom {
+      font-size: 16px !important;
+    }
+    .block2 h2 {
+      font-size: 24px;
+    }
+    .block2 .offices {
+      gap: 12px !important;
+    }
+  }
+
+
+
+
