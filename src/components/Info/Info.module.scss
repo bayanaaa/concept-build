@@ -108,10 +108,14 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .content {
     .card {
-      padding: 12px;
+      padding: 10px;
+      h2{
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
       .title {
         font-size: 8px;
       }

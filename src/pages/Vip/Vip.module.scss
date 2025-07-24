@@ -4,11 +4,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 30px 0;
   }
+
   .nav {
     justify-content: center;
     // margin: 0 32%;
-    margin-top: 30px;
     align-items: center;
     width: fit-content;
     background: #fff;
@@ -39,6 +40,7 @@
   }
   main {
     margin-top: 30px;
+    display: unset;
     .info {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -159,6 +161,15 @@
 
 @media (max-width: 730px) {
   .content {
+    .nav_wrapper {
+      .nav {
+        width: 100%;
+        div {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
     .section {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;

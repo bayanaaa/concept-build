@@ -2,15 +2,14 @@
 
 .parent {
   header {
-    position: absolute;
-    left: 45%;
-    top: 10px;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
     cursor: pointer;
   }
   .content {
-    margin-top: 100px;
-    // background: url(../../assets/background.svg);
+    margin-top: 10px;
     background: #005b7d;
     border-radius: 30px;
     background-size: cover;
@@ -25,7 +24,7 @@
     position: relative;
     .input_group {
       position: relative;
-
+      cursor: pointer;
       .clear_icon {
         position: absolute;
         right: 10px;
@@ -34,7 +33,6 @@
         cursor: pointer;
         font-size: 18px;
         color: #999;
-
         &:hover {
           color: #333;
         }
@@ -54,32 +52,24 @@
       z-index: 1000;
       margin-top: 8px;
     }
-
     .passengers_popup {
       animation: menu 0.3s ease forwards;
-
       position: absolute;
       top: 100%;
       right: 0;
       z-index: 1000;
       margin-top: 10px;
     }
-
-    .input_group {
-      position: relative;
-      cursor: pointer;
-    }
-
     .lastInput {
       min-width: 200px;
     }
-
     .upper_part {
       position: unset;
       display: flex;
       z-index: 476 !important;
       justify-content: space-between;
-      .text {
+      .text,
+      .text > span {
         font-size: 16px;
         font-weight: 600;
         color: #fff;
@@ -90,6 +80,7 @@
       }
       .icon {
         margin-right: 10px;
+        margin-bottom: 0;
       }
     }
     main {
@@ -108,12 +99,12 @@
       }
       nav {
         display: flex;
-        margin-top: 100px;
+        gap: 2px;
+        margin-top: 70px;
         background: #fff;
         width: fit-content;
         padding: 4px;
         border-radius: 10px;
-
         .nav_item {
           position: relative;
           display: flex;
@@ -158,10 +149,17 @@
             }
           }
         }
+        .nav_item:first-child{
+ color: #fff;
+            background: #0391d4;
+            .nav_icon {
+              color: #fff;
+            }
+        }
       }
       form {
         overflow-y: visible;
-        margin-top: 23px;
+        // margin-top: 23px;
         gap: 2px;
         z-index: 4;
         overflow-x: unset;
@@ -228,14 +226,27 @@
             }
           }
         }
+        .for_input {
+          background: #fff;
+          padding: 2px;
+        }
+        .firstInput {
+          border-top-left-radius: 16px;
+          border-bottom-left-radius: 16px;
+        }
+        .lastInput {
+          border-top-right-radius: 16px;
+          border-bottom-right-radius: 16px;
+        }
         .input_group {
           display: flex;
+          background: white;
           justify-content: space-between;
           cursor: pointer;
           align-items: center;
           padding: 20px 16px;
-          background: #fff;
           height: 60px;
+          position: relative;
           input {
             font-weight: 400;
             font-size: 16px;
@@ -256,6 +267,10 @@
           .type {
             font-size: 14px;
           }
+          .code {
+            position: absolute;
+            right: 20px;
+          }
           .arrow {
             display: flex;
             font-size: 15px;
@@ -268,13 +283,8 @@
             transition: 0.2s ease;
           }
         }
-        .firstInput {
-          border-top-left-radius: 16px;
-          border-bottom-left-radius: 16px;
-        }
-        .lastInput {
-          border-top-right-radius: 16px;
-          border-bottom-right-radius: 16px;
+        .input_group:focus-within {
+          border: 3px solid #005b7d;
         }
         .button {
           border: none;
@@ -311,6 +321,16 @@
   }
 }
 
+form .firstInput .input_group:first-of-type {
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+form .lastInput .input_group {
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
 @keyframes menu {
   0% {
     opacity: 0;
@@ -334,18 +354,20 @@
           &::-webkit-scrollbar {
             display: none;
           }
-
-          // width: 100%;
         }
       }
     }
   }
 
   .parent .content main form {
-    display: grid !important; // Принудительное применение Grid
+    display: grid !important;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, minmax(60px, auto));
     width: 100%;
+    .for_input {
+      border-radius: 10px;
+      width: 100%;
+    }
     .input_group {
       border-radius: 10px;
     }
@@ -432,12 +454,18 @@
     header {
       left: 45% !important;
       img {
-        width: 70%;
+        width: 25%;
       }
     }
     .content {
-      margin-top: 70px;
       height: 750px !important;
+      .upper_part {
+        .text {
+          span {
+            display: none;
+          }
+        }
+      }
       main {
         h1 {
           font-size: 25px !important;
@@ -447,18 +475,19 @@
           .button {
             height: 50px;
           }
-          .dest_section{
-            .city_menu{
+          .dest_section {
+            .city_menu {
               padding: 5px;
-              .block{
-                .plane_icon{
+              .block {
+                .plane_icon {
                   width: 35px;
                   height: 35px;
                 }
-                .info{
-                  p, .city{
+                .info {
+                  p,
+                  .city {
                     font-size: 12px;
-                    span{
+                    span {
                       font-size: 12px;
                     }
                   }
@@ -482,39 +511,34 @@
 
 @media (max-width: 650px) {
   .parent .content {
-    padding: 20px; 
+    padding: 20px;
     .dates_data {
       flex-direction: column;
     }
-
     .calendar_overlay {
       position: absolute;
-      top: 100%; 
+      top: 100%;
       left: 0;
-      width: 100%; 
+      width: 100%;
       transform: translateX(0);
       z-index: 2000;
       margin-top: 10px;
-      max-height: 250px; 
+      max-height: 250px;
       overflow-y: auto;
       background: #fff;
       border-radius: 10px;
-      padding: 10px; 
-
-     
+      padding: 10px;
       .calendar {
-        font-size: 14px; 
+        font-size: 14px;
         .day {
-          padding: 5px; 
+          padding: 5px;
         }
       }
     }
-
     .input_group {
-      width: 100%; 
-      padding: 15px 10px; 
+      width: 100%;
+      padding: 15px 10px;
     }
-
     .button {
       width: 100%;
       margin-left: 0;

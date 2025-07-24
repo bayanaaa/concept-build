@@ -4,7 +4,7 @@ import { footerArr, socialArr } from "../../constants/Footer";
 import { useLocation } from "react-router-dom";
 
 function Footer() {
-  const {pathname} = useLocation()
+  const { pathname } = useLocation();
 
   const navigations = footerArr.map(({ heading, info }, index) => (
     <div key={index} className={scss.block}>
@@ -42,8 +42,11 @@ function Footer() {
 
   return (
     <div className="containerr">
-      <div className={scss.content} style={pathname !== '/' ? {marginLeft: "80px"} : {}}>
-        <div className='d-flex justify-content-between flex-wrap gap-5'>
+      <div
+        className={scss.content}
+        style={pathname !== "/" ? { marginLeft: "80px" } : {}}
+      >
+        <div className="d-flex justify-content-between flex-wrap gap-5">
           <div className={scss.main}>{navigations}</div>
           <div className="d-flex gap-4">{socials}</div>
         </div>

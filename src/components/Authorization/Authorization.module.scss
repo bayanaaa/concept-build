@@ -6,7 +6,7 @@
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100000000000;
   right: 0;
   background: #0000004d;
   height: 100vh;
@@ -19,7 +19,8 @@
     background: #fff;
     top: 40px;
     width: 440px;
-    left: 35%;
+    left: 50%;
+    transform: translateX(-50%);
     .aut_methods {
       display: grid;
       border-radius: 10px;
@@ -119,6 +120,15 @@
         .inp {
           padding: 15px 16px;
         }
+        .phoneInput {
+          width: 100% !important;
+          background: none;
+          border: none;
+          outline: none;
+          font-size: 12px;
+          font-weight: 400;
+          color: #2b2929;
+        }
       }
       .bottom {
         display: flex;
@@ -212,6 +222,30 @@
         span {
           color: #0391d4;
           cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    .window {
+      width: 320px;
+      padding: 16px;
+      h2 {
+        margin: 20px 0 0 0;
+        font-size: 24px;
+      }
+      form {
+        margin-top: 20px;
+        .input_wrapper {
+          margin-bottom: 10px;
+        }
+        .inpWrap {
+          .inp {
+            padding: 15px 0;
+          }
         }
       }
     }

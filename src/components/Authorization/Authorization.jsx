@@ -4,11 +4,13 @@ import { FaRegEyeSlash, FaEye } from "react-icons/fa";
 import google from "../../assets/google.svg";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import Password from "./Password/Password";
 
 const arr = ["Войти", "Регистрация"];
 
 function Authorization({ setAuthOpen }) {
   const [method, setMethod] = useState("Войти");
+  const [passwordOpen, setPasswordOpen] = useState(false)
   const [passwordHidden, setPasswordHidden] = useState(false);
   const wrapperRef = useRef();
 
@@ -26,6 +28,11 @@ function Authorization({ setAuthOpen }) {
     };
   }, [setAuthOpen]);
 
+  const handlePass = ( ) => {
+    setPasswordOpen(true)
+    setAuthOpen(false)
+  }
+
   const types = arr.map((el, index) => (
     <p
       onClick={() => setMethod(el)}
@@ -37,6 +44,7 @@ function Authorization({ setAuthOpen }) {
   ));
 
   return (
+   <>
     <div className={scss.wrapper}>
       <div className={scss.window} ref={wrapperRef}>
         <div className={scss.aut_methods}>{types}</div>
@@ -77,7 +85,9 @@ function Authorization({ setAuthOpen }) {
                     <input type="checkbox" name="remember" />
                     <label htmlFor="remember">Запомнить меня</label>
                   </div>
-                  <p className={scss.forget}>Забыли пароль?</p>
+                  <p className={scss.forget} onClick={handlePass}>
+                    Забыли пароль?
+                  </p>
                 </section>
                 <button type="submit">Войти</button>
               </form>
@@ -100,13 +110,12 @@ function Authorization({ setAuthOpen }) {
                   />
                 </div>
                 <div className={scss.inpWrap}>
-                  <div>
-                    <PhoneInput
-                      country={"kg"}
-                      inputProps={{ required: true, readOnly: true }}
-                      containerClass={`${scss.input_wrapper} ${scss.inp}`}
-                    />
-                  </div>
+                  <PhoneInput
+                    country={"kg"}
+                    inputProps={{ required: true, readOnly: true }}
+                    containerClass={`${scss.input_wrapper} ${scss.inp}`}
+                    inputClass={scss.phoneInput}
+                  />
                   <div className={scss.input_wrapper}>
                     <label htmlFor="phone">Номер телефона</label>
                     <input
@@ -151,7 +160,8 @@ function Authorization({ setAuthOpen }) {
                 <div className={scss.remember}>
                   <input type="checkbox" name="agree" />
                   <label htmlFor="agree">
-                    Я принимаю условия использования и политику конфиденциальности
+                    Я принимаю условия использования и политику
+                    конфиденциальности
                   </label>
                 </div>
               </form>
@@ -186,6 +196,8 @@ function Authorization({ setAuthOpen }) {
         </div>
       </div>
     </div>
+    {passwordOpen && <Password/>}
+   </>
   );
 }
 

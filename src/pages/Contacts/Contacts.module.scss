@@ -17,6 +17,7 @@
         display: flex;
         flex-direction: column;
         padding: 8px 16px;
+        width: 100%;
         border-radius: 8px;
         background: #eff1f999;
         input,
@@ -24,6 +25,7 @@
           border: none;
           outline: none;
           background: none;
+          width: 100%;
           resize: none;
         }
         label {
@@ -35,6 +37,12 @@
         textarea {
           height: 130px;
         }
+      }
+      .input_block:nth-of-type(1) {
+        grid-column: 1/2;
+      }
+      .input_block:nth-of-type(2) {
+        grid-column: 2/3;
       }
       .input_block:nth-of-type(3) {
         grid-column: 1/3;
@@ -213,32 +221,36 @@
     margin-left: 0;
   }
   .block {
-      grid-template-columns: 1fr; // одна колонка вместо двух
+      grid-template-columns: 1fr !important; 
       gap: 30px;
+      form{
+        button{
+          grid-column: 1/3 !important;
+          width: unset !important;
+        }
+      }
     }
     .block2 .offices {
-      grid-template-columns: repeat(2, 1fr); // две карточки в ряд
+      grid-template-columns: repeat(2, 1fr) !important; 
     }
 }
 
 
   @media (max-width: 768px) {
     .block {
-      // убираем внутренние отступы, чтобы форма и инфо заняли всю ширину
       grid-template-columns: 1fr !important;
     }
     .block .info main {
-      grid-template-columns: 1fr !important; // контакты в одну колонку
+      grid-template-columns: 1fr !important; 
     }
     .block2 .offices {
-      grid-template-columns: 1fr !important; // одна карточка в ряд
+      grid-template-columns: 1fr !important; 
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 520px) {
     .block form {
       padding: 16px !important;
-      grid-template-columns: 1fr !important; // инпуты в одну колонку
       gap: 12px !important;
     }
     .block .info h2 {
@@ -253,6 +265,9 @@
     }
     .block2 .offices {
       gap: 12px !important;
+    }
+    .block form{
+      gap: 10px;
     }
   }
 

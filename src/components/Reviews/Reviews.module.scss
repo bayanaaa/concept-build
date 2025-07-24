@@ -3,7 +3,44 @@
 
 $font-primary: "SF Pro Display", sans-serif;
 $font-secondary: "Poppins", sans-serif;
+.review_card {
+    max-width: 420px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
+    .header {
+      display: flex;
+      gap: 10px;
+
+      aside {
+        h3 {
+          font-size: 15px;
+          font-weight: 500;
+          color: #282828;
+          margin: 0;
+        }
+
+        span {
+          font-size: 14px;
+          font-weight: 400;
+          color: #9ea9b7;
+        }
+      }
+    }
+
+    .text {
+      font-size: 24px;
+      font-weight: 500;
+      font-family: $font-secondary;
+      line-height: 100%;
+      color: #5c5c5c;
+    }
+  }
 .content {
   margin-top: 80px;
   .h1 {
@@ -47,44 +84,7 @@ $font-secondary: "Poppins", sans-serif;
     display: none;
   }
 
-  .review_card {
-    max-width: 420px;
-    flex-shrink: 0;
-    background: #fff;
-    border-radius: 20px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .header {
-      display: flex;
-      gap: 10px;
-
-      aside {
-        h3 {
-          font-size: 15px;
-          font-weight: 500;
-          color: #282828;
-          margin: 0;
-        }
-
-        span {
-          font-size: 14px;
-          font-weight: 400;
-          color: #9ea9b7;
-        }
-      }
-    }
-
-    .text {
-      font-size: 24px;
-      font-weight: 500;
-      font-family: $font-secondary;
-      line-height: 100%;
-      color: #5c5c5c;
-    }
-  }
+  
 }
 
 @media (max-width: 1350px) {
@@ -120,9 +120,7 @@ $font-secondary: "Poppins", sans-serif;
       margin-top: 16px;
     }
   }
-  .revCard {
-    margin-top: 30px;
-    .review_card {
+   .review_card {
       max-width: 320px;
       padding: 12px;
       .text {
@@ -139,5 +137,8 @@ $font-secondary: "Poppins", sans-serif;
         }
       }
     }
+  .revCard {
+    margin-top: 30px;
+   
   }
 }
