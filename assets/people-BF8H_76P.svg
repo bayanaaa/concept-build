@@ -11,7 +11,7 @@
 <circle cx="230" cy="30" r="30" fill="url(#pattern4_41_5912)"/>
 <circle cx="280" cy="30" r="30" fill="#D9D9D9"/>
 <circle cx="280" cy="30" r="30" fill="url(#pattern5_41_5912)"/>
-<path d="M331.648 26.752H339.76V31.648H331.648V39.76H326.752V31.648H318.64V26.752H326.752V18.64H331.648V26.752Z" fill="#005B7D"/>
+<path d="M331.648 26.752H339.76V31.648H331.648V39.76H326.752V31.648H318.64V26.752H326.752V18.64H331.648V26.752Z" fill="#0078bf"/>
 <defs>
 <pattern id="pattern0_41_5912" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_41_5912" transform="translate(0 -0.128609) scale(0.00262467)"/>
